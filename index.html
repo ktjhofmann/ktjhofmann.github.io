@@ -32,11 +32,10 @@
       overflow:hidden;
       text-decoration:none;
       color:inherit;
-      background-color:rgba(45, 100, 240, 0.3);
       text-align:center;
       cursor:pointer;
       white-space:nowrap;
-      font-family: "Helvetica-Neue", Helvetica, Arial, san-serif;
+      font-family: Helvetica, Arial, san-serif;
       }     
     .recipe-modal{
       z-index:3;
@@ -114,12 +113,12 @@
     </p>
     
 <div class="innerdiv">
-  <button onclick="document.getElementById('id01').style.display='block'" class="recipe-button">Vegetable Quiche</button>
+  <button onclick="document.getElementById('id01').style.display='block'" class="recipe-button" style="background-color:rgba(45,100,240,0.3);">Vegetable Quiche</button>
 
   <div id="id01" class="recipe-modal">
     <div class="recipe-modal-content">
       <div>
-        <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button" style="background-color:rgb(245,245,245);">&times;</span>
         <p>Some text. Some text. Some text.</p>
         <p>Some text. Some text. Some text.</p>
       </div>
