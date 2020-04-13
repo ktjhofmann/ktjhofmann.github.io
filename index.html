@@ -65,9 +65,22 @@
       height: 100%; 
       border: none;
     } 
-      
     </style>
-    <!-- this is how to write a comment -->
+   
+    <!-- JAVA code -->
+    <script>    
+var elem = $( 'id01' )[0];
+$( document ).on( 'click', function ( e ) {
+    if ( $( e.target ).closest( elem ).length === 0 ) {
+        $( elem ).hide();
+    }
+});             
+$( document ).on( 'keydown', function ( e ) {
+    if ( e.keyCode === 27 ) {
+        $( elem ).hide();
+    }
+});
+    </script>
          
   <head>
     
@@ -131,21 +144,7 @@
    <iframe src="/Recipes/Quiche.html"></iframe>
  </div>
 </div>    
-    
-var elem = $( 'id01' )[0];
-$( document ).on( 'click', function ( e ) {
-    if ( $( e.target ).closest( elem ).length === 0 ) {
-        $( elem ).hide();
-    }
-});             
-$( document ).on( 'keydown', function ( e ) {
-    if ( e.keyCode === 27 ) {
-        $( elem ).hide();
-    }
-});
-    
-    
-    
+      
     <div style="padding:25px">
     </div>
     
