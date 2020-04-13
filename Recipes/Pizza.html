@@ -58,20 +58,18 @@
         }        
     .iframe-container {
       width: 400px;
-      height:255px; /*aspect ratio: 400/(255-15-15) = 16/9 */
+      height:225px; /*aspect ratio: 400/225 = 16/9 */
       overflow: hidden;
       /*padding-top: 56.25%;*/
       position: relative;       
       margin: auto; 
-      padding-top:15px;
-      padding-bottom:15px;
+      padding:15px;
      }
     .iframe-container iframe {
        border: 0;
        height: 100%;
        position: absolute;
        width: 100%;
-       margin: auto;        
     }
     ul li {
       line-height:1.5;
@@ -96,7 +94,7 @@
     <p>
         My pizza dough copies the recipe described in this video. If you prefer, you can first watch the tutorial.
     </p>
-    
+   
     <div class="iframe-container">
         <iframe src="https://www.youtube.com/embed/HkXojFU_LrE?autoplay=1&origin=http://example.com" allowfullscreen></iframe>
     </div>
