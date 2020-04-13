@@ -31,7 +31,21 @@
        margin-left: 175px;
        background-color:rgb(255, 255, 255);
       }     
-    .recipe-button{
+      .recipe-button-call{
+      border:none;
+      display:inline-block;
+      padding:8px 16px;
+      vertical-align:middle;
+      overflow:hidden;
+      text-decoration:none;
+      color:inherit;
+      text-align:center;
+      cursor:pointer;
+      white-space:nowrap;
+      font-family: Helvetica, Arial, san-serif;
+      background-color:rgba(45,100,240,0.3);   
+    }       
+    .recipe-button-close{
       border:none;
       display:inline-block;
       padding:8px 16px;
@@ -46,6 +60,7 @@
       position:absolute;
       right:0;
       top:0;
+      background-color:rgb(245,245,245);   
     }     
     .recipe-modal{
       z-index:3;
@@ -130,12 +145,12 @@
     </p>
     
     <p> 
-      <button onclick="document.getElementById('id01').style.display='block'" class="recipe-button" style="background-color:rgba(45,100,240,0.3);">Vegetable Quiche</button>
+      <button onclick="document.getElementById('id01').style.display='block'" class="recipe-button-call">Vegetable Quiche</button>
     </p>
     
 <div id="id01" class="recipe-modal">
  <div class="recipe-modal-content">
-   <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button" style="background-color:rgb(245,245,245);">&times;</span>
+   <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button-close">&times;</span>
    <iframe src="/Recipes/Quiche.html"></iframe>
  </div>
 </div>    
