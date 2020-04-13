@@ -173,9 +173,15 @@
 
     <!-- JAVA code -->
     <script>   
-        var modal = document.getElementsByClassName('recipe-modal');
+        var modal1 = document.getElementsById('recipe1');
         window.onclick = function(event) {
-          if (event.target == modal) {
+          if (event.target == modal1) {
+          modal.style.display = "none";
+          }
+        }
+        var modal2 = document.getElementsById('recipe2');
+        window.onclick = function(event) {
+          if (event.target == modal2) {
           modal.style.display = "none";
           }
         }
