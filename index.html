@@ -92,6 +92,16 @@
       border: none;
     } 
     </style>
+    
+    <!-- JAVA code -->
+    <script>    
+      var modal = document.getElementById('id01');
+      window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+      }
+    </script>        
            
   <head>
     
@@ -150,7 +160,7 @@
     
 <div id="id01" class="recipe-modal">
  <div class="recipe-modal-content">
-   <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button-close">&times;</span>
+   <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button-close">Back</span>
    <iframe src="/Recipes/Quiche.html"></iframe>
  </div>
 </div>    
@@ -162,21 +172,6 @@
       Stanford Institute for Economic Policy Analysis <br>
       366 Galvez St, Stanford, CA 94305, USA
     </address>
- 
-    <!-- JAVA code -->
-    <script>    
-      var modal = document.getElementById('id01');
-      window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-        }
-      }
-      window.onkeypress = function(event) {
-        if (event.targe == modal && e.keyCode === 27) {
-          modal.style.display = "none";
-        }
-      }
-    </script>    
     
   </body>
 </html>   
