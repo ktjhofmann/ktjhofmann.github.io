@@ -157,7 +157,7 @@
     
 <div id="recipe2" class="recipe-modal">
  <div class="recipe-modal-content">
-   <span onclick="document.getElementById('recipe2').style.display='none'" class="recipe-button-close">Back</span>
+   <span onclick="document.getElementById('recipe2').style.display='none'" class="recipe-button-close" title="Return to previous page">Back</span>
    <iframe src="/Recipes/Pizza.html"></iframe>
  </div>
 </div>        
@@ -173,14 +173,12 @@
 
     <!-- JAVA code -->
     <script>   
-      function myFunction() {
         var modal = document.getElementsByClassName('recipe-modal');
         window.onclick = function(event) {
           if (event.target == modal) {
           modal.style.display = "none";
           }
         }
-      }
     </script>     
     
   </body>
