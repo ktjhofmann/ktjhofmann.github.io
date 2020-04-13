@@ -56,9 +56,20 @@
       clear: both;
       display: table;
     }        
-    iframe {
-        display:block;
-    }   
+    .iframe-container {
+      overflow: hidden;
+      // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+      padding-top: 56.25%;
+      position: relative;
+    }
+    .iframe-container iframe {
+       border: 0;
+       height: 100%;
+       left: 0;
+       position: absolute;
+       top: 0;
+       width: 100%;
+    }
     </style>
 </head>
 <body>
@@ -82,10 +93,12 @@
         <a href="https://www.stadlermade.com/pizza-dough-calculator/" target="_blank" title="Go to website">pizza dough calculator</a>.
     </p>
     
-    <iframe type="text/html" width="640" height="360" src="https://www.youtube.com/embed/HkXojFU_LrE?autoplay=1&origin=http://example.com"></iframe>
-
+    <div class="iframe-container">
+        <iframe src="https://www.youtube.com/embed/HkXojFU_LrE?autoplay=1&origin=http://example.com" allowfullscreen></iframe>
+    </div>
+    
     <p> 
-        Below, I describe the dough recipe for 4 Neapolitan pizzas. 
+        My recipe below is for 4 Neapolitan pizza and uses US meas
     </p>
     
     <h4>Ingredients</h4>
