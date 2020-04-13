@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Crepes Recipe</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        background-color: rgb(255, 255, 255); 
+        font-family: Helvetica, Arial, san-serif;
+        margin: 15px;
+        font-size: 90%;
+      }
+      p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        margin-left: 10px;        
+        line-height: 1.5;
+        text-align: justify;
+      }   
+      p.b {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        margin-left: 84px;        
+        line-height: 1.5;
+        text-align: justify;
+        text-indent:-74px; 
+        }
+      h3 {
+        font-family: Helvetica, Arial, san-serif;
+      } 
+    table {
+       font-family: Helvetica, Arial, san-serif;
+       border-collapse: collapse;
+       width: 100%;
+       margin-left: 10px;
+       margin-right: 10px;
+       table-layout: auto;
+    }
+    td, th {
+      text-align: left;
+      padding: 2px;
+    }
+    </style>
+</head>
+<body>
+
+    <h3>Simple Cr&ecirc;pes</h3>
+    
+    <p>
+        This recipe is simple and ideal for a quick and delicious desert or to enrich your Sunday breakfast table. 
+        I bet you have all ingredients in your pantry! The cr&ecirc;pes go well with agave syrup, fresh fruit or any
+        sweet or savory topping you have at hand. The ingredients below are for 2 portions.
+    </p>
+      
+    <h4>Ingredients</h4>
+    <table>  
+        <tr>
+            <td>1 egg</td>
+        </tr>
+        <tr>
+            <td>1 tablespoon sugar</td>
+        </tr>
+        <tr>
+            <td>1 cup milk</td>
+        </tr>       
+        <tr>
+            <td>3/4 cups flour</td>
+        </tr>
+        <tr>
+            <td>pinch of salt</td>
+        </tr>
+    </table>
+   
+    <h4>Method</h4>
+    <p>
+        In a mixing bowl, add the egg and sugar and whisk until fluffy. Mix in the milk.
+    </p>
+    <p>
+       Add the flour to the mixing bowl. If you have a fine mesh strainer, sift the flour. 
+       Add the salt and mix the ingredients well. 
+    </p>
+    <p>
+       Let the dough rest for up to 15 minutes. Bake the cr&ecirc;pes in a nonstick pan over medium-high heat.
+    </p>
+    
+</body>
+</html>
