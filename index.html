@@ -173,14 +173,10 @@
 
     <!-- JAVA code -->
     <script>    
-      var i;
-      for (i = 0; i < 3; i++) {
-        text = 'recipe' + i
-        var modal = document.getElementById(text);
-        window.onclick = function(event) {
-          if (event.target == modal) {
-          modal.style.display = "none";
-          }
+      var modal = document.getElementsByClassName('recipe-modal');
+      window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
         }
       }
     </script>     
