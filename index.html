@@ -171,6 +171,11 @@
         modal.style.display = "none";
         }
       }
+      window.onkeypress = function(event) {
+        if (event.targe == modal && e.keyCode === 27) {
+          modal.style.display = "none";
+        }
+      }
     </script>    
     
   </body>
