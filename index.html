@@ -69,7 +69,7 @@
    
     <!-- JAVA code -->
     <script>    
-      d = document.getElementById("id01");
+      d = document.getElementById("id02");
       d.addEventListener("click", function(e){e.stopPropagation()},true);
       addEventListener("click", function() {d.style.display="none"},false);
       addEventListener("keypress", function(e){e.keyCode==27 &&(d.style.display="none")},false);
@@ -132,7 +132,7 @@
 </div>
     
 <div id="id01" class="recipe-modal">
- <div class="recipe-modal-content">
+ <div id="id02" class="recipe-modal-content">
    <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button" style="background-color:rgb(245,245,245);">&times;</span>
    <iframe src="/Recipes/Quiche.html"></iframe>
  </div>
