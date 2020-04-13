@@ -42,6 +42,20 @@
       text-align: left;
       padding: 2px;
     }
+    * {
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }        
     </style>
 </head>
 <body>
@@ -166,9 +180,17 @@
         At the end of baking, the center may still be slightly wobbly, but it should not be loose or liquid. Cool for 15 minutes.
     </p>    
     
-    <img src="Images/SIEPR_headshots-Hofmann.jpg" style="width:500px;height:100px;">
-
-    
+    <div class="row">
+      <div class="column">
+        <img src="/Images/Quiche1.jpg" alt="Quiche1" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="/Images/Quiche2.jpg" alt="Quiche2" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="/Images/Quiche3.jpg" alt="Quiche3" style="width:100%">
+      </div>
+    </div>
     
 </body>
 </html>
