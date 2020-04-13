@@ -69,17 +69,10 @@
    
     <!-- JAVA code -->
     <script>    
-var elem = $( 'id01' )[0];
-$( document ).on( 'click', function ( e ) {
-    if ( $( e.target ).closest( elem ).length === 0 ) {
-        $( elem ).hide();
-    }
-});             
-$( document ).on( 'keydown', function ( e ) {
-    if ( e.keyCode === 27 ) {
-        $( elem ).hide();
-    }
-});
+      d = document.getElementById("id01");
+      d.addEventListener("click", function(e){e.stopPropagation()},true);
+      addEventListener("click", function() {d.style.display="none"},false);
+      addEventListener("keypress", function(e){e.keyCode==27 &&(d.style.display="none")},false);
     </script>
          
   <head>
