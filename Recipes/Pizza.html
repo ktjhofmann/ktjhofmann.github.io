@@ -58,11 +58,13 @@
         }        
     .iframe-container {
       width: 400px;
-      height:225px; /*aspect ratio: 400/225 = 16/9 */
+      height:255px; /*aspect ratio: 400/(255-15-15) = 16/9 */
       overflow: hidden;
       /*padding-top: 56.25%;*/
       position: relative;       
       margin: auto; 
+      padding-top:15px;
+      padding-bottom:15px;
      }
     .iframe-container iframe {
        border: 0;
