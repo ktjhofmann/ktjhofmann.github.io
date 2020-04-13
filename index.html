@@ -144,20 +144,20 @@
     </p>
     
     <p class="p-recipe"> 
-      <button onclick="document.getElementById('id01').style.display='block'" class="recipe-button-call" title="Go to recipe">Vegetable Quiche</button>
-      <button onclick="document.getElementById('id02').style.display='block'" class="recipe-button-call" title="Go to recipe">Pizza Dough</button>
+      <button onclick="document.getElementById('recipe1').style.display='block'" class="recipe-button-call" title="Go to recipe">Vegetable Quiche</button>
+      <button onclick="document.getElementById('recipe2').style.display='block'" class="recipe-button-call" title="Go to recipe">Pizza Dough</button>
     </p>
     
-<div id="id01" class="recipe-modal">
+<div id="recipe1" class="recipe-modal">
  <div class="recipe-modal-content">
-   <span onclick="document.getElementById('id01').style.display='none'" class="recipe-button-close">Back</span>
+   <span onclick="document.getElementById('recipe1').style.display='none'" class="recipe-button-close">Back</span>
    <iframe src="/Recipes/Quiche.html"></iframe>
  </div>
 </div>    
     
-<div id="id02" class="recipe-modal">
+<div id="recipe2" class="recipe-modal">
  <div class="recipe-modal-content">
-   <span onclick="document.getElementById('id02').style.display='none'" class="recipe-button-close">Back</span>
+   <span onclick="document.getElementById('recipe2').style.display='none'" class="recipe-button-close">Back</span>
    <iframe src="/Recipes/Pizza.html"></iframe>
  </div>
 </div>        
@@ -173,10 +173,14 @@
 
     <!-- JAVA code -->
     <script>    
-      var modal = document.getElementById('id01');
-      window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
+      var i;
+      for (i = 0; i < 3; i++) {
+        text = 'recipe' + i
+        var modal = document.getElementById(text);
+        window.onclick = function(event) {
+          if (event.target == modal) {
+          modal.style.display = "none";
+          }
         }
       }
     </script>     
