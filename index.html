@@ -147,6 +147,7 @@
       <button onclick="document.getElementById('recipe1').style.display='block'" class="recipe-button-call" title="Go to recipe">Vegetable Quiche</button>
       <button onclick="document.getElementById('recipe2').style.display='block'" class="recipe-button-call" title="Go to recipe">Pizza Dough</button>
       <button onclick="document.getElementById('recipe3').style.display='block'" class="recipe-button-call" title="Go to recipe">Simple Cr&ecirc;pes</button>
+      <button onclick="document.getElementById('recipe4').style.display='block'" class="recipe-button-call" title="Go to recipe">Banana Bread</button>
     </p>
     
 <div id="recipe1" class="recipe-modal">
@@ -169,6 +170,13 @@
    <iframe src="/Recipes/Crepes.html"></iframe>
  </div>
 </div>        
+    
+<div id="recipe4" class="recipe-modal">
+ <div class="recipe-modal-content">
+   <span onclick="document.getElementById('recipe4').style.display='none'" class="recipe-button-close" title="Return to previous page">Back</span>
+   <iframe src="/Recipes/BananaBread.html"></iframe>
+ </div>
+</div>      
            
     <div style="padding:25px">
     </div>
@@ -191,6 +199,9 @@
               modal2.style.display = "none";
           }
           if (event.target == modal3) {
+              modal3.style.display = "none";
+          }        
+          if (event.target == modal4) {
               modal3.style.display = "none";
           }        
        }
