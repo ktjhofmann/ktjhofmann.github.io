@@ -42,6 +42,20 @@
       text-align: left;
       padding: 2px;
     }
+      * {
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }        
     </style>
 </head>
 <body>
@@ -82,15 +96,36 @@
    
     <h4>Method</h4>
     <p>
-        In a mixing bowl, add the egg and sugar and whisk until fluffy. Mix in the milk.
+        Preheat the oven to 350 degree. Grease loaf pan. 
+    </p>    
+    <p>
+        In a mixing bowl, stir together flour, baking powder, baking soda and salt.
     </p>
     <p>
-       Add the flour to the mixing bowl. If you have a fine mesh strainer, sift the flour. 
-       Add the salt and mix the ingredients well. 
+        In another bowl, cream butter and sugar. Add eggs, vanilla extract and cinnamon, and beat well. Add to dry ingredients.
     </p>
     <p>
-       Let the dough rest for up to 15 minutes. Bake the cr&ecirc;pes in a nonstick pan over medium-high heat.
+       Add mashed bananas. Fold in walnuts. Pour batter into prepared pan. 
     </p>
+    <p>
+        Bake for 40-50 minutes, or until a knife inserted in center comes out clean.
+    </p>
+    
+    <div style="padding:15px">
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <img src="/Images/Quiche1.jpg" alt="Quiche1" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="/Images/Quiche2.jpg" alt="Quiche2" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="/Images/Quiche3.jpg" alt="Quiche3" style="width:100%">
+        <figcaption style="text-align:center;">Variation 2</figcaption>   
+      </div>
+    </div> 
     
 </body>
 </html>
