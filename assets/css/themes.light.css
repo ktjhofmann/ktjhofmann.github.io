@@ -96,7 +96,7 @@ hr,
 }
 
 .t-title__first-word {
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-weight: 300;
 }
 
