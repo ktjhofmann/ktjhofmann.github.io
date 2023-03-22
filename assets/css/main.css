@@ -1925,13 +1925,13 @@ img[height] {
     padding: 4.375rem 5.25rem 1.6625rem;
   }
   .o-section__content {
-    padding: 4.375rem 0.25rem 0.6625rem;
+    padding: 3.15rem 1.4rem 1.4rem;
   }
   .o-section__full-top-space {
-    padding-top: 4.375rem;
+    padding-top: 3.15rem;
   }
   .o-section__full-bottom-space {
-    padding-bottom: 4.375rem;
+    padding-bottom: 3.15rem;
   }
 }
 
