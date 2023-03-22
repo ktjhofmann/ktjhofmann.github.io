@@ -1873,19 +1873,19 @@ img[height] {
 
 @media (min-width: 760px) {
   .o-section__header {
-    padding: 3.15rem 3.5rem 1.4rem;
+    padding: 1.75rem 1.75rem 0rem;
   }
   .o-section--header .o-section__header {
     padding-bottom: 0;
   }
   .o-section__content {
-    padding: 3.15rem 0.5rem 0.4rem;
+    padding: 1.75rem 1.75rem 0rem;
   }
   .o-section__full-top-space {
-    padding-top: 3.15rem;
+    padding-top: 1.75rem;
   }
   .o-section__full-bottom-space {
-    padding-bottom: 3.15rem;
+    padding-bottom: 1.75rem;
   }
 }
 
@@ -1925,13 +1925,13 @@ img[height] {
     padding: 4.375rem 5.25rem 1.6625rem;
   }
   .o-section__content {
-    padding: 3.15rem 1.4rem 1.4rem;
+    padding: 1.75rem 1.75rem 0rem;
   }
   .o-section__full-top-space {
-    padding-top: 3.15rem;
+    padding-top: 1.75rem;
   }
   .o-section__full-bottom-space {
-    padding-bottom: 3.15rem;
+    padding-bottom: 1.75rem;
   }
 }
 
