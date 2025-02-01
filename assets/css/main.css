@@ -646,7 +646,7 @@ img[height] {
 }
 
 .o-container {
-  max-width: 1276px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1856,11 +1856,11 @@ img[height] {
 }
 
 .o-section__header {
-  padding: 1.75rem 1.75rem 0rem;
+  padding: 1.75rem 1rem 0rem;
 }
 
 .o-section__content {
-  padding: 1.75rem 1.75rem 0rem;
+  padding: 1.75rem 1rem 0rem;
 }
 
 .o-section__full-top-space {
@@ -1922,10 +1922,10 @@ img[height] {
 
 @media (min-width: 1200px) {
   .o-section__header {
-    padding: 4.375rem 5.25rem 1.6625rem;
+    padding: 4.375rem 3rem 1.6625rem;
   }
   .o-section__content {
-    padding: 4.375rem 5.25rem 1.6625rem;
+    padding: 4.375rem 3rem 1.6625rem;
   }
   .o-section__full-top-space {
     padding-top: 4.375rem;
