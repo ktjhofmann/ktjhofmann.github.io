@@ -3,3 +3,32 @@
   color: inherit !important; /* same gray as body text */
   font-weight: 400;          /* optional: keep it from looking like a big headline */
 }
+
+/* ===== Click-to-toggle abstracts ===== */
+details.abstract { margin: 0.35rem 0 0.75rem; }
+details.abstract[open] { margin-bottom: 1.25rem; }
+
+summary.abstract-toggle {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;   /* make it look like a link */
+  user-select: none;
+  outline: none;
+}
+
+/* Hide the default disclosure arrow so it looks like a text link */
+summary.abstract-toggle::-webkit-details-marker { display: none; }
+summary.abstract-toggle::marker { content: ""; }
+
+/* Add a small caret that flips when open */
+summary.abstract-toggle::after {
+  content: " ▸";
+  font-weight: 700;
+}
+details.abstract[open] summary.abstract-toggle::after {
+  content: " ▾";
+}
+
+/* Optional: make the summary use your anchor color.
+   If your theme sets link color on <a>, copy that hex here. */
+summary.abstract-toggle { color: inherit; } /* change to e.g., #337ab7 if you want blue */
