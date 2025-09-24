@@ -1,7 +1,5 @@
-/**
- * CUSTOM CSS
- *
- * Here you can add your custom CSS code.
- */
-
-/*# sourceMappingURL=custom.css.map */
+/* Make the intro H2 use normal body text color (darker gray) */
+.o-section--header .c-brand__sub-title.t-sub-title {
+  color: inherit !important; /* same gray as body text */
+  font-weight: 400;          /* optional: keep it from looking like a big headline */
+}
