@@ -4,6 +4,11 @@
   font-weight: 400;          /* optional: keep it from looking like a big headline */
 }
 
+/* Increase horizontal padding globally */
+.o-container {
+  padding-inline: clamp(16px, 6vw, 72px) !important; /* min 16px, scale by viewport, cap at 72px */
+}
+
 /* ===== Click-to-toggle abstracts ===== */
 details.abstract { margin: 0.35rem 0 0.75rem; }
 details.abstract[open] { margin-bottom: 1.25rem; }
