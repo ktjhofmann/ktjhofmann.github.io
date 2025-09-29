@@ -37,3 +37,22 @@ details.abstract[open] summary.abstract-toggle::after {
 /* Optional: make the summary use your anchor color.
    If your theme sets link color on <a>, copy that hex here. */
 summary.abstract-toggle { color: inherit; } /* change to e.g., #337ab7 if you want blue */
+
+
+/* Make the header avatar rectangular (no rounding or masks) */
+.o-section--header .c-avatar,
+.o-section--header .c-avatar__img {
+  border-radius: 0 !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  overflow: visible; /* in case the parent was clipping */
+}
+
+/* Prevent stretching: keep the image's aspect ratio */
+.o-section--header .c-avatar__img {
+  width: 100%;
+  height: auto !important;   /* don't force a fixed height */
+  object-fit: contain;       /* or 'cover' if you want it to fill the box and crop */
+}
+
