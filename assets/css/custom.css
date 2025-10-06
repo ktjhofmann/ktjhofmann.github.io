@@ -56,3 +56,28 @@ summary.abstract-toggle { color: inherit; } /* change to e.g., #337ab7 if you wa
   object-fit: contain;       /* or 'cover' if you want it to fill the box and crop */
 }
 
+/* Rounded-rectangle avatar */
+.o-section--header .c-avatar,
+.o-section--header .c-avatar__img {
+  border-radius: 12px !important;   /* adjust to taste */
+  overflow: hidden;                  /* hide any overflow when rounded */
+}
+
+/* Keep aspect ratio and avoid stretching */
+.o-section--header .c-avatar__img {
+  width: 100%;
+  height: auto;                      /* or set a fixed height + object-fit: cover */
+  object-fit: cover;
+}
+
+/* Center the caption and style it lightly */
+.o-section--header .c-header__avatar { text-align: center; }
+
+.o-section--header .c-avatar__caption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #9aa0a6;                    /* light gray; tweak if needed */
+}
+
+
