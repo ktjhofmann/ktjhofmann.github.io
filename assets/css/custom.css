@@ -244,4 +244,10 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   font-style: normal !important; /* just in case theme italicizes */
 }
 
-
+/* Match widths: intro paragraph block and the nav row */
+.o-section--header .c-brand__sub-title.t-sub-title,
+.o-section--header .c-header__contact .o-grid {
+  max-width: 68ch;          /* same readable measure for both */
+  margin-left: 0;           /* align to the left edge of the column */
+  margin-right: 0;          /* (use auto on both sides to center, if preferred) */
+}
