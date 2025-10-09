@@ -1,9 +1,11 @@
 /* ===========================
-   Header intro color (use body color)
+   Header intro: color + smaller size
    =========================== */
 .o-section--header .c-brand__sub-title.t-sub-title {
-  color: inherit !important; /* now resolves to black via global rule below */
-  font-weight: 400;          /* keep it from looking like a big headline */
+  color: inherit !important;                 /* inherits global body color (black below) */
+  font-weight: 400;
+  font-size: clamp(14px, 1.6vw, 18px) !important;
+  line-height: 1.55;
 }
 
 /* ===========================
@@ -11,6 +13,71 @@
    =========================== */
 .o-container {
   padding-inline: clamp(16px, 6vw, 72px) !important; /* min 16px, scale by viewport, cap at 72px */
+}
+
+/* Tighten header top spacing */
+.o-section--header .o-section__container { padding-top: 16px !important; }
+.o-section--header .c-header__header { margin-top: 0 !important; }
+.o-section--header .c-header__content { padding-top: 8px !important; }
+
+/* Lift right-hand header content (name + text + links) up to align with photo */
+.o-section--header .c-header__brand { margin-top: -24px !important; }
+.o-section--header .c-header__contact { margin-top: 8px !important; }
+
+/* ===========================
+   Name styling: all caps, black, single line, larger initials
+   =========================== */
+.c-brand__title.t-title {
+  color: #000 !important;                    /* all black */
+  text-transform: uppercase !important;      /* KATJA HOFMANN */
+  white-space: nowrap !important;            /* keep on one line */
+  letter-spacing: 0.02em;                    /* subtle tracking */
+  font-size: clamp(28px, 6vw, 56px) !important;
+  line-height: 1.05;
+}
+.c-brand__first-word,
+.c-brand__second-word { display: inline !important; }
+.c-brand__first-word { margin-right: 0.35ch; }
+
+.c-brand__first-word::first-letter,
+.c-brand__second-word::first-letter {
+  font-size: 1.18em;                         /* tweak 1.12–1.25 to taste */
+  line-height: 1;
+}
+
+/* ===========================
+   Header nav row: black, bigger, single line
+   =========================== */
+.o-section--header .c-header__contact .o-grid {
+  display: flex !important;
+  flex-wrap: nowrap !important;              /* keep on one row */
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 28px;                          /* spacing between items */
+}
+
+.o-section--header .c-header__contact .o-grid__col-md-3,
+.o-section--header .c-header__contact .o-grid__col-sm-6 {
+  flex: 0 0 auto !important;                 /* width fits content */
+  width: auto !important;
+}
+
+.o-section--header .c-header__contact a,
+.o-section--header .c-header__contact a h4 {
+  color: #000 !important;
+  text-decoration: none !important;          /* keep clean; hover adds underline below */
+  white-space: nowrap !important;
+}
+
+.o-section--header .c-header__contact a h4 {
+  font-size: clamp(17px, 2.2vw, 22px) !important;
+  font-weight: 600;
+  margin: 0;
+}
+
+.o-section--header .c-header__contact a:hover h4 {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ===========================
@@ -24,45 +91,41 @@ summary.abstract-toggle {
   display: inline-block;
   user-select: none;
   outline: none;
-  text-decoration: underline;   /* look like a link */
+  text-decoration: underline;
+  color: #000 !important;                    /* match global link style */
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
 }
 
-/* Hide the default disclosure arrow so it looks like a text link */
+/* Hide default marker; add custom caret */
 summary.abstract-toggle::-webkit-details-marker { display: none; }
 summary.abstract-toggle::marker { content: ""; }
-
-/* Add a small caret that flips when open */
-summary.abstract-toggle::after {
-  content: " ▸";
-  font-weight: 700;
-}
-details.abstract[open] summary.abstract-toggle::after {
-  content: " ▾";
-}
+summary.abstract-toggle::after { content: " ▸"; font-weight: 700; }
+details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 
 /* ===========================
    Avatar: rounded rectangle + caption
    =========================== */
+.o-section--header .c-header__avatar { text-align: center; }
+
 .o-section--header .c-avatar,
 .o-section--header .c-avatar__img {
-  border-radius: 12px !important;   /* adjust to taste (8px–16px also nice) */
-  overflow: hidden;                  /* hide overflow on rounded corners */
+  border-radius: 12px !important;            /* rounded corners */
+  overflow: hidden;                           /* hide overflow on rounding */
 }
 
-/* Keep aspect ratio and avoid stretching */
 .o-section--header .c-avatar__img {
   width: 100%;
-  height: auto;                      /* or set a fixed height + object-fit: cover */
+  height: auto;                               /* or set fixed height + object-fit: cover */
   object-fit: cover;
 }
 
-/* Caption centered under avatar */
-.o-section--header .c-header__avatar { text-align: center; }
+/* Caption under avatar */
 .o-section--header .c-avatar__caption {
   margin-top: 8px;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: #9aa0a6;                    /* light gray */
+  color: #9aa0a6;                             /* light gray */
 }
 
 /* ===========================
@@ -70,9 +133,7 @@ details.abstract[open] summary.abstract-toggle::after {
    =========================== */
 
 /* Make all body text black */
-.c-main-container {
-  color: #000 !important;
-}
+.c-main-container { color: #000 !important; }
 
 /* Make all links black and underlined (all states) */
 .c-main-container a,
@@ -88,83 +149,8 @@ details.abstract[open] summary.abstract-toggle::after {
   text-decoration-skip-ink: auto;
 }
 
-/* Ensure toggle “Abstract” links match, too */
-summary.abstract-toggle {
-  color: #000 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
+/* Keep the header nav un-underlined by default (overrides global) */
+.o-section--header .c-header__contact a,
+.o-section--header .c-header__contact a h4 {
+  text-decoration: none !important;
 }
-
-/* (Optional) If you DON'T want the top nav items underlined, uncomment:
-.c-header__contact a h4 { text-decoration: none !important; }
-*/
-
-/* ===== 1) Make the intro paragraph smaller ===== */
-.o-section--header .c-brand__sub-title.t-sub-title {
-  font-size: clamp(14px, 1.6vw, 18px) !important;  /* smaller than default */
-  line-height: 1.55;                               /* comfy multi-line */
-}
-
-/* ===== 2) Reduce padding at the very top of the page ===== */
-.o-section--header .o-section__container { 
-  padding-top: 16px !important;  /* tighten header top space */
-}
-.o-section--header .c-header__header { 
-  margin-top: 0 !important;
-}
-.o-section--header .c-header__content { 
-  padding-top: 8px !important;
-}
-
-/* ===== 3) "KATJA HOFMANN" on one line, black, a bit smaller ===== */
-.c-brand__title.t-title {
-  color: #000 !important;                          /* all black */
-  font-size: clamp(28px, 6vw, 56px) !important;    /* a bit smaller overall */
-  line-height: 1.05;                               /* tighter line height */
-  white-space: nowrap;                             
-}
-.c-brand__first-word,
-.c-brand__second-word {
-  display: inline !important;                      /* force same line */
-}
-.c-brand__first-word { margin-right: 0.3ch; }      /* small space between names */
-
-/* ========== 1) Pull the right-hand header content upward ========== */
-/* Nudge the brand block and the links block up. Tweak values to taste. */
-.o-section--header .c-header__brand {
-  margin-top: -24px !important;      /* try -16px to -40px depending on taste */
-}
-.o-section--header .c-header__contact {
-  margin-top: 8px !important;        /* keep contact/nav closer to the brand */
-}
-
-/* If you want an even stronger lift without shifting the avatar, uncomment:
-.o-section--header .c-header__top { transform: translateY(-12px); }
-*/
-
-/* ========== 2) Name styling: all caps, black, same font, single line ========== */
-.c-brand__title.t-title {
-  color: #000 !important;            /* all black */
-  text-transform: uppercase !important;
-  white-space: nowrap !important;    /* keep on one line */
-  letter-spacing: 0.02em;            /* optional: subtle tracking */
-}
-
-/* Keep both words on the same line */
-.c-brand__first-word,
-.c-brand__second-word {
-  display: inline !important;
-}
-.c-brand__first-word { margin-right: 0.35ch; }
-
-/* ========== 3) Larger initials “K” and “H” ========== */
-/* Bump just the first letter of each word */
-.c-brand__first-word::first-letter,
-.c-brand__second-word::first-letter {
-  font-size: 1.18em;                 /* adjust 1.12–1.25 as you like */
-  line-height: 1;                    /* stays aligned to baseline */
-}
-
-/* If the title feels too big overall, you can also rein in the base size: */
-/* .c-brand__title.t-title { font-size: clamp(28px, 5.5vw, 52px) !important; } */
