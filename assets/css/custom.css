@@ -1,95 +1,170 @@
-/* ===========================
-   Header intro: color + smaller size
-   =========================== */
-.o-section--header .c-brand__sub-title.t-sub-title {
-  color: inherit !important;                 /* matches normal body text color */
-  font-weight: 400;
-  font-size: clamp(14px, 1.6vw, 18px) !important;
-  line-height: 1.55;
+/* =========================================================
+   GLOBAL TEXT & LINK STYLING
+   ========================================================= */
+.c-main-container {
+  color: #222 !important;                /* dark gray body text */
 }
 
-/* ===========================
-   Layout: wider horizontal padding
-   =========================== */
+.c-main-container a,
+.c-main-container a:visited,
+.c-main-container a:hover,
+.c-main-container a:focus,
+.c-main-container a:active {
+  color: #222 !important;                /* dark gray links */
+  text-decoration: underline !important; /* always underlined */
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Abstract toggles should match link styling */
+summary.abstract-toggle {
+  color: #222 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* =========================================================
+   LAYOUT: HORIZONTAL PADDING
+   ========================================================= */
 .o-container {
-  padding-inline: clamp(16px, 6vw, 72px) !important; /* min 16px, scale by viewport, cap at 72px */
+  padding-inline: clamp(16px, 6vw, 72px) !important; /* min 16px; scales; caps at 72px */
 }
 
-/* Tighten header top spacing */
-.o-section--header .o-section__container { padding-top: 8px !important; }   /* was 16px */
-.o-section--header .c-header__header { margin-top: 0 !important; }
-.o-section--header .c-header__content { padding-top: 4px !important; }      /* was 8px */
+/* =========================================================
+   HEADER: SPACING & FLOW (NO OVERLAP)
+   ========================================================= */
+/* Reasonable top/bottom padding for header pieces */
+.o-section--header .o-section__header {
+  padding-top: 16px !important;
+  padding-bottom: 12px !important;
+}
+.o-section--header .o-section__content {
+  padding-bottom: 16px !important;       /* breathing room after header content */
+}
+.o-section--header .o-section__container {
+  padding-top: 12px !important;
+}
+.o-section--header .c-header__content {
+  padding-top: 8px !important;
+  padding-bottom: 12px !important;
+}
 .o-section--header .c-header__contact-divider {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
 
-/* Lift right-hand header content (name + text + links) up to align with photo */
-.o-section--header .c-header__brand { margin-top: -24px !important; }
-.o-section--header .c-header__contact { margin-top: 8px !important; }
+/* Remove aggressive upward nudge on right-hand column */
+.o-section--header .c-header__brand {
+  margin-top: 0 !important;              /* was negative */
+}
 
-/* ===========================
-   Name styling: all caps, black, single line, larger initials
-   =========================== */
+/* At desktop widths, cancel theme's absolute/100vh hero layout */
+@media (min-width: 1024px) {
+  .c-header__header,
+  .c-header__content {
+    height: auto !important;             /* cancel 100vh */
+  }
+  .c-header__contact {
+    position: relative !important;       /* keep in normal flow */
+    bottom: auto !important;
+    left: auto !important;
+    width: 100%;
+    margin-top: 16px !important;
+  }
+  .c-header__avatar,
+  .c-header__top {
+    top: 0 !important;                    /* cancel upward shift */
+  }
+  .c-header__avatar {
+    margin-top: 0 !important;             /* cancel theme's -5.8rem */
+  }
+  .c-header__inner-header,
+  .c-header__inner-content {
+    justify-content: flex-start !important; /* start near top instead of centered */
+  }
+}
+
+/* =========================================================
+   NAME LINE: CAPS, BLACK, SINGLE LINE, BIG INITIALS
+   ========================================================= */
+.c-brand__title.t-title .c-brand__sizer {
+  white-space: nowrap !important;        /* keep the whole name on one line */
+}
+
+/* Apply color + uppercase with strong specificity */
+.c-brand__title.t-title,
+.c-brand__title.t-title .c-brand__first-word,
+.c-brand__title.t-title .c-brand__second-word {
+  color: #000 !important;                /* name specifically in black */
+  -webkit-text-fill-color: #000 !important;
+  text-transform: uppercase !important;  /* KATJA HOFMANN */
+  letter-spacing: 0.02em;                /* subtle tracking */
+}
+
+/* Base size/leading for the full title */
 .c-brand__title.t-title {
-  color: #000 !important;                    /* name in black */
-  text-transform: uppercase !important;      /* KATJA HOFMANN */
-  white-space: nowrap !important;            /* keep on one line */
-  letter-spacing: 0.02em;                    /* subtle tracking */
   font-size: clamp(28px, 6vw, 56px) !important;
   line-height: 1.05;
 }
+
+/* Ensure ::first-letter works and control the inter-word gap */
 .c-brand__first-word,
-.c-brand__second-word { display: inline !important; }
+.c-brand__second-word {
+  display: inline-block !important;
+  margin: 0;
+}
 .c-brand__first-word { margin-right: 0.35ch; }
 
+/* Larger initials (K and H) */
 .c-brand__first-word::first-letter,
 .c-brand__second-word::first-letter {
-  font-size: 1.18em;                         /* tweak 1.12–1.25 to taste */
+  font-size: 1.20em;                     /* tweak 1.12–1.25 to taste */
   line-height: 1;
 }
 
-/* ===========================
-   Header nav row: match intro size/color, underline, tighter spacing, single line
-   =========================== */
+/* =========================================================
+   INTRO PARAGRAPH (H2 SUB-TITLE): SMALLER + INHERITED COLOR
+   ========================================================= */
+.o-section--header .c-brand__sub-title.t-sub-title {
+  color: inherit !important;             /* same dark gray as body text */
+  font-weight: 400;
+  font-size: clamp(14px, 1.6vw, 18px) !important;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   HEADER NAV ROW (Publications / Working papers / ...)
+   Match intro text size/color; keep underlined; single line; control spacing
+   ========================================================= */
 .o-section--header .c-header__contact .o-grid {
   display: flex !important;
-  flex-wrap: nowrap !important;              /* keep on one row */
+  flex-wrap: nowrap !important;          /* force one row */
   align-items: center;
-  gap: 10px !important;                      /* tighter spacing */
-  column-gap: 10px !important;
+  gap: 18px !important;                  /* spacing between items; tweak 14–26px */
 }
-
 .o-section--header .c-header__contact .o-grid__col-md-3,
 .o-section--header .c-header__contact .o-grid__col-sm-6 {
-  flex: 0 0 auto !important;                 /* width fits content */
+  flex: 0 0 auto !important;             /* width fits content */
   width: auto !important;
 }
-
-/* Let link color inherit from surrounding text (same as intro) and match size */
 .o-section--header .c-header__contact a,
 .o-section--header .c-header__contact a h4 {
-  color: inherit !important;
+  color: inherit !important;             /* same dark gray as intro */
 }
-
 .o-section--header .c-header__contact a h4 {
-  font-size: clamp(14px, 1.6vw, 18px) !important; /* same as intro */
-  font-weight: 400 !important;                     /* same weight as intro */
+  font-size: clamp(14px, 1.6vw, 18px) !important; /* match intro size */
+  font-weight: 400 !important;
   margin: 0 !important;
   white-space: nowrap !important;
-  text-decoration: underline !important;           /* underline since they're links */
+  text-decoration: underline !important;           /* underline since they are links */
   text-underline-offset: 2px;
   text-decoration-thickness: 1.5px;
 }
 
-/* Optional hover emphasis */
-.o-section--header .c-header__contact a:hover h4 {
-  text-decoration: underline;
-}
-
-/* ===========================
-   Toggle-able abstracts
-   =========================== */
+/* =========================================================
+   ABSTRACT TOGGLES
+   ========================================================= */
 details.abstract { margin: 0.35rem 0 0.75rem; }
 details.abstract[open] { margin-bottom: 1.25rem; }
 
@@ -98,10 +173,7 @@ summary.abstract-toggle {
   display: inline-block;
   user-select: none;
   outline: none;
-  text-decoration: underline;
-  color: inherit !important;                 /* match surrounding text color */
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
+  text-decoration: underline;            /* looks like a link */
 }
 
 /* Hide default marker; add custom caret */
@@ -110,103 +182,27 @@ summary.abstract-toggle::marker { content: ""; }
 summary.abstract-toggle::after { content: " ▸"; font-weight: 700; }
 details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 
-/* ===========================
-   Avatar: rounded rectangle + caption
-   =========================== */
+/* =========================================================
+   AVATAR: ROUNDED RECTANGLE + CAPTION
+   ========================================================= */
 .o-section--header .c-header__avatar { text-align: center; }
 
 .o-section--header .c-avatar,
 .o-section--header .c-avatar__img {
-  border-radius: 12px !important;            /* rounded corners */
-  overflow: hidden;                           /* hide overflow on rounding */
+  border-radius: 12px !important;        /* rounded corners */
+  overflow: hidden;                       /* hide overflow on rounding */
 }
 
 .o-section--header .c-avatar__img {
   width: 100%;
-  height: auto;                               /* or set fixed height + object-fit: cover */
+  height: auto;                           /* or set a fixed height + object-fit: cover */
   object-fit: cover;
 }
 
-/* Caption under avatar */
+/* Caption under avatar (keeps light gray) */
 .o-section--header .c-avatar__caption {
   margin-top: 8px;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: #9aa0a6;                             /* light gray */
+  color: #9aa0a6;
 }
-
-/* More space between: Publications / Working papers / Work in progress / CV */
-.o-section--header .c-header__contact .o-grid {
-  gap: 28px !important;   /* increase/decrease to taste: 18–28px works well */
-}
-
-/* Make sure the items themselves don't add extra spacing */
-.o-section--header .c-header__contact a h4 { margin: 0 !important; }
-
-/* Keep name on one line + allow ::first-letter to work */
-.c-brand__title.t-title .c-brand__sizer { white-space: nowrap !important; }
-.c-brand__first-word, .c-brand__second-word { display: inline-block !important; margin: 0; }
-.c-brand__first-word { margin-right: 0.35ch; }
-
-/* Bigger initials */
-.c-brand__first-word::first-letter, .c-brand__second-word::first-letter { font-size: 1.20em; line-height: 1; }
-
-/* Avatar corners */
-.o-section--header .c-avatar, .o-section--header .c-avatar__img { border-radius: 12px !important; overflow: hidden; }
-
-/* Tighten header top spacing (beats large paddings/heights in main.css) */
-.o-section--header .o-section__header { padding-top: 15px !important; padding-bottom: 8px !important; }
-.o-section--header .o-section__container { padding-top: 15px !important; }
-.o-section--header .c-header__content { padding-top: 10px !important; }
-@media (min-width: 1024px) {
-  .c-header__header, .c-header__content { height: auto !important; } /* cancel 100vh */
-}
-
-/* Links: dark gray + underlined */
-.c-main-container { color: #222 !important; } /* body text dark gray */
-.c-main-container a,
-.c-main-container a:visited,
-.c-main-container a:hover,
-.c-main-container a:focus,
-.c-main-container a:active {
-  color: #222 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
-}
-
-/* Nav row spacing (Publications / Working papers / Work in progress / CV) */
-.o-section--header .c-header__contact .o-grid { display: flex !important; flex-wrap: nowrap !important; gap: 22px !important; }
-.o-section--header .c-header__contact a h4 { margin: 0 !important; font-size: clamp(14px, 1.6vw, 18px) !important; font-weight: 400 !important; color: inherit !important; }
-
-/* Global dark gray body text */
-.c-main-container { color: #222 !important; }  /* pick #222 or #2b2b2b */
-
-/* Make all hyperlinks dark gray + underlined (all states) */
-.c-main-container a,
-.c-main-container a:visited,
-.c-main-container a:hover,
-.c-main-container a:focus,
-.c-main-container a:active {
-  color: #222 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
-}
-
-/* Ensure Abstract toggles match link styling */
-summary.abstract-toggle {
-  color: #222 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
-}
-
-/* Nav row should inherit the same dark gray and size as intro (keeps underline) */
-.o-section--header .c-header__contact a,
-.o-section--header .c-header__contact a h4 {
-  color: inherit !important;
-  text-decoration: underline !important;
-}
-
-
