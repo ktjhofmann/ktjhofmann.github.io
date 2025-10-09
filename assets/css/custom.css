@@ -36,7 +36,7 @@ summary.abstract-toggle {
    ========================================================= */
 /* Reasonable top/bottom padding for header pieces */
 .o-section--header .o-section__header {
-  padding-top: 16px !important;
+  padding-top: 24px !important;
   padding-bottom: 12px !important;
 }
 .o-section--header .o-section__content {
@@ -51,7 +51,7 @@ summary.abstract-toggle {
 }
 .o-section--header .c-header__contact-divider {
   margin-top: 8px !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 16px !important;
 }
 
 /* Remove aggressive upward nudge on right-hand column */
@@ -233,4 +233,15 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 @supports (-ms-ime-align:auto) or (text-align-last: auto) {
   .o-section--header .c-brand__sub-title.t-sub-title { text-align-last: left; }
 }
+
+/* Make "Hofmann" NOT bold — match "Katja" exactly */
+.c-brand__title.t-title,
+.c-brand__title.t-title .c-brand__first-word,
+.c-brand__title.t-title .c-brand__second-word,
+.c-brand__title.t-title .t-title__first-word,
+.c-brand__title.t-title .t-title__second-word {
+  font-weight: 400 !important;   /* same as Katja */
+  font-style: normal !important; /* just in case theme italicizes */
+}
+
 
