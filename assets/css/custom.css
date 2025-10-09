@@ -143,3 +143,70 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 /* Make sure the items themselves don't add extra spacing */
 .o-section--header .c-header__contact a h4 { margin: 0 !important; }
 
+/* Keep name on one line + allow ::first-letter to work */
+.c-brand__title.t-title .c-brand__sizer { white-space: nowrap !important; }
+.c-brand__first-word, .c-brand__second-word { display: inline-block !important; margin: 0; }
+.c-brand__first-word { margin-right: 0.35ch; }
+
+/* Bigger initials */
+.c-brand__first-word::first-letter, .c-brand__second-word::first-letter { font-size: 1.20em; line-height: 1; }
+
+/* Avatar corners */
+.o-section--header .c-avatar, .o-section--header .c-avatar__img { border-radius: 12px !important; overflow: hidden; }
+
+/* Tighten header top spacing (beats large paddings/heights in main.css) */
+.o-section--header .o-section__header { padding-top: 8px !important; padding-bottom: 8px !important; }
+.o-section--header .o-section__container { padding-top: 8px !important; }
+.o-section--header .c-header__content { padding-top: 4px !important; }
+@media (min-width: 1024px) {
+  .c-header__header, .c-header__content { height: auto !important; } /* cancel 100vh */
+}
+
+/* Links: dark gray + underlined */
+.c-main-container { color: #222 !important; } /* body text dark gray */
+.c-main-container a,
+.c-main-container a:visited,
+.c-main-container a:hover,
+.c-main-container a:focus,
+.c-main-container a:active {
+  color: #222 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Nav row spacing (Publications / Working papers / Work in progress / CV) */
+.o-section--header .c-header__contact .o-grid { display: flex !important; flex-wrap: nowrap !important; gap: 22px !important; }
+.o-section--header .c-header__contact a h4 { margin: 0 !important; font-size: clamp(14px, 1.6vw, 18px) !important; font-weight: 400 !important; color: inherit !important; }
+
+/* Global dark gray body text */
+.c-main-container { color: #222 !important; }  /* pick #222 or #2b2b2b */
+
+/* Make all hyperlinks dark gray + underlined (all states) */
+.c-main-container a,
+.c-main-container a:visited,
+.c-main-container a:hover,
+.c-main-container a:focus,
+.c-main-container a:active {
+  color: #222 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Ensure Abstract toggles match link styling */
+summary.abstract-toggle {
+  color: #222 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Nav row should inherit the same dark gray and size as intro (keeps underline) */
+.o-section--header .c-header__contact a,
+.o-section--header .c-header__contact a h4 {
+  color: inherit !important;
+  text-decoration: underline !important;
+}
+
+
