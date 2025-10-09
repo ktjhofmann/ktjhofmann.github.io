@@ -134,3 +134,12 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   line-height: 1.2;
   color: #9aa0a6;                             /* light gray */
 }
+
+/* More space between: Publications / Working papers / Work in progress / CV */
+.o-section--header .c-header__contact .o-grid {
+  gap: 22px !important;   /* increase/decrease to taste: 18–28px works well */
+}
+
+/* Make sure the items themselves don't add extra spacing */
+.o-section--header .c-header__contact a h4 { margin: 0 !important; }
+
