@@ -137,7 +137,7 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 
 /* More space between: Publications / Working papers / Work in progress / CV */
 .o-section--header .c-header__contact .o-grid {
-  gap: 22px !important;   /* increase/decrease to taste: 18–28px works well */
+  gap: 28px !important;   /* increase/decrease to taste: 18–28px works well */
 }
 
 /* Make sure the items themselves don't add extra spacing */
@@ -155,9 +155,9 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 .o-section--header .c-avatar, .o-section--header .c-avatar__img { border-radius: 12px !important; overflow: hidden; }
 
 /* Tighten header top spacing (beats large paddings/heights in main.css) */
-.o-section--header .o-section__header { padding-top: 8px !important; padding-bottom: 8px !important; }
-.o-section--header .o-section__container { padding-top: 8px !important; }
-.o-section--header .c-header__content { padding-top: 4px !important; }
+.o-section--header .o-section__header { padding-top: 15px !important; padding-bottom: 8px !important; }
+.o-section--header .o-section__container { padding-top: 15px !important; }
+.o-section--header .c-header__content { padding-top: 10px !important; }
 @media (min-width: 1024px) {
   .c-header__header, .c-header__content { height: auto !important; } /* cancel 100vh */
 }
