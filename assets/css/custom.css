@@ -99,3 +99,34 @@ summary.abstract-toggle {
 /* (Optional) If you DON'T want the top nav items underlined, uncomment:
 .c-header__contact a h4 { text-decoration: none !important; }
 */
+
+/* ===== 1) Make the intro paragraph smaller ===== */
+.o-section--header .c-brand__sub-title.t-sub-title {
+  font-size: clamp(14px, 1.6vw, 18px) !important;  /* smaller than default */
+  line-height: 1.55;                               /* comfy multi-line */
+}
+
+/* ===== 2) Reduce padding at the very top of the page ===== */
+.o-section--header .o-section__container { 
+  padding-top: 16px !important;  /* tighten header top space */
+}
+.o-section--header .c-header__header { 
+  margin-top: 0 !important;
+}
+.o-section--header .c-header__content { 
+  padding-top: 8px !important;
+}
+
+/* ===== 3) "KATJA HOFMANN" on one line, black, a bit smaller ===== */
+.c-brand__title.t-title {
+  color: #000 !important;                          /* all black */
+  font-size: clamp(28px, 6vw, 56px) !important;    /* a bit smaller overall */
+  line-height: 1.05;                               /* tighter line height */
+  white-space: nowrap;                             
+}
+.c-brand__first-word,
+.c-brand__second-word {
+  display: inline !important;                      /* force same line */
+}
+.c-brand__first-word { margin-right: 0.3ch; }      /* small space between names */
+
