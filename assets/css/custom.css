@@ -130,3 +130,41 @@ summary.abstract-toggle {
 }
 .c-brand__first-word { margin-right: 0.3ch; }      /* small space between names */
 
+/* ========== 1) Pull the right-hand header content upward ========== */
+/* Nudge the brand block and the links block up. Tweak values to taste. */
+.o-section--header .c-header__brand {
+  margin-top: -24px !important;      /* try -16px to -40px depending on taste */
+}
+.o-section--header .c-header__contact {
+  margin-top: 8px !important;        /* keep contact/nav closer to the brand */
+}
+
+/* If you want an even stronger lift without shifting the avatar, uncomment:
+.o-section--header .c-header__top { transform: translateY(-12px); }
+*/
+
+/* ========== 2) Name styling: all caps, black, same font, single line ========== */
+.c-brand__title.t-title {
+  color: #000 !important;            /* all black */
+  text-transform: uppercase !important;
+  white-space: nowrap !important;    /* keep on one line */
+  letter-spacing: 0.02em;            /* optional: subtle tracking */
+}
+
+/* Keep both words on the same line */
+.c-brand__first-word,
+.c-brand__second-word {
+  display: inline !important;
+}
+.c-brand__first-word { margin-right: 0.35ch; }
+
+/* ========== 3) Larger initials “K” and “H” ========== */
+/* Bump just the first letter of each word */
+.c-brand__first-word::first-letter,
+.c-brand__second-word::first-letter {
+  font-size: 1.18em;                 /* adjust 1.12–1.25 as you like */
+  line-height: 1;                    /* stays aligned to baseline */
+}
+
+/* If the title feels too big overall, you can also rein in the base size: */
+/* .c-brand__title.t-title { font-size: clamp(28px, 5.5vw, 52px) !important; } */
