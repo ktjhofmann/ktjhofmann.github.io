@@ -154,3 +154,27 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 .o-section--header .c-header__contact a h4 {
   text-decoration: none !important;
 }
+
+/* ===== Header nav: match intro paragraph + underline ===== */
+/* Keep them on one line (you can omit these if you already set flex/nowrap earlier) */
+.o-section--header .c-header__contact .o-grid {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+}
+
+/* Let link color inherit from surrounding text (same as intro) and match size */
+.o-section--header .c-header__contact a,
+.o-section--header .c-header__contact a h4 {
+  color: inherit !important;
+}
+
+.o-section--header .c-header__contact a h4 {
+  font-size: clamp(14px, 1.6vw, 18px) !important; /* same as intro */
+  font-weight: 400 !important;                     /* same weight as intro */
+  margin: 0;
+  white-space: nowrap !important;
+  text-decoration: underline !important;           /* underline since they're links */
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
