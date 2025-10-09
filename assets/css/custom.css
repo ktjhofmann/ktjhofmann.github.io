@@ -2,7 +2,7 @@
    Header intro: color + smaller size
    =========================== */
 .o-section--header .c-brand__sub-title.t-sub-title {
-  color: inherit !important;                 /* inherits global body color (black below) */
+  color: inherit !important;                 /* matches normal body text color */
   font-weight: 400;
   font-size: clamp(14px, 1.6vw, 18px) !important;
   line-height: 1.55;
@@ -16,9 +16,13 @@
 }
 
 /* Tighten header top spacing */
-.o-section--header .o-section__container { padding-top: 16px !important; }
+.o-section--header .o-section__container { padding-top: 8px !important; }   /* was 16px */
 .o-section--header .c-header__header { margin-top: 0 !important; }
-.o-section--header .c-header__content { padding-top: 8px !important; }
+.o-section--header .c-header__content { padding-top: 4px !important; }      /* was 8px */
+.o-section--header .c-header__contact-divider {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
 
 /* Lift right-hand header content (name + text + links) up to align with photo */
 .o-section--header .c-header__brand { margin-top: -24px !important; }
@@ -28,7 +32,7 @@
    Name styling: all caps, black, single line, larger initials
    =========================== */
 .c-brand__title.t-title {
-  color: #000 !important;                    /* all black */
+  color: #000 !important;                    /* name in black */
   text-transform: uppercase !important;      /* KATJA HOFMANN */
   white-space: nowrap !important;            /* keep on one line */
   letter-spacing: 0.02em;                    /* subtle tracking */
@@ -46,14 +50,14 @@
 }
 
 /* ===========================
-   Header nav row: black, bigger, single line
+   Header nav row: match intro size/color, underline, tighter spacing, single line
    =========================== */
 .o-section--header .c-header__contact .o-grid {
   display: flex !important;
   flex-wrap: nowrap !important;              /* keep on one row */
   align-items: center;
-  justify-content: space-between;
-  column-gap: 28px;                          /* spacing between items */
+  gap: 10px !important;                      /* tighter spacing */
+  column-gap: 10px !important;
 }
 
 .o-section--header .c-header__contact .o-grid__col-md-3,
@@ -62,22 +66,25 @@
   width: auto !important;
 }
 
+/* Let link color inherit from surrounding text (same as intro) and match size */
 .o-section--header .c-header__contact a,
 .o-section--header .c-header__contact a h4 {
-  color: #000 !important;
-  text-decoration: none !important;          /* keep clean; hover adds underline below */
-  white-space: nowrap !important;
+  color: inherit !important;
 }
 
 .o-section--header .c-header__contact a h4 {
-  font-size: clamp(17px, 2.2vw, 22px) !important;
-  font-weight: 600;
-  margin: 0;
+  font-size: clamp(14px, 1.6vw, 18px) !important; /* same as intro */
+  font-weight: 400 !important;                     /* same weight as intro */
+  margin: 0 !important;
+  white-space: nowrap !important;
+  text-decoration: underline !important;           /* underline since they're links */
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
 }
 
+/* Optional hover emphasis */
 .o-section--header .c-header__contact a:hover h4 {
   text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 /* ===========================
@@ -92,7 +99,7 @@ summary.abstract-toggle {
   user-select: none;
   outline: none;
   text-decoration: underline;
-  color: #000 !important;                    /* match global link style */
+  color: inherit !important;                 /* match surrounding text color */
   text-underline-offset: 2px;
   text-decoration-thickness: 1.5px;
 }
@@ -126,55 +133,4 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   font-size: 0.85rem;
   line-height: 1.2;
   color: #9aa0a6;                             /* light gray */
-}
-
-/* ===========================
-   Global text & link styling
-   =========================== */
-
-/* Make all body text black */
-.c-main-container { color: #000 !important; }
-
-/* Make all links black and underlined (all states) */
-.c-main-container a,
-.c-main-container a:visited,
-.c-main-container a:hover,
-.c-main-container a:focus,
-.c-main-container a:active {
-  color: #000 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
-  -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
-}
-
-/* Keep the header nav un-underlined by default (overrides global) */
-.o-section--header .c-header__contact a,
-.o-section--header .c-header__contact a h4 {
-  text-decoration: none !important;
-}
-
-/* ===== Header nav: match intro paragraph + underline ===== */
-/* Keep them on one line (you can omit these if you already set flex/nowrap earlier) */
-.o-section--header .c-header__contact .o-grid {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  gap: 20px;
-}
-
-/* Let link color inherit from surrounding text (same as intro) and match size */
-.o-section--header .c-header__contact a,
-.o-section--header .c-header__contact a h4 {
-  color: inherit !important;
-}
-
-.o-section--header .c-header__contact a h4 {
-  font-size: clamp(14px, 1.6vw, 18px) !important; /* same as intro */
-  font-weight: 400 !important;                     /* same weight as intro */
-  margin: 0;
-  white-space: nowrap !important;
-  text-decoration: underline !important;           /* underline since they're links */
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.5px;
 }
