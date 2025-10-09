@@ -1,24 +1,30 @@
-/* Make the intro H2 use normal body text color (darker gray) */
+/* ===========================
+   Header intro color (use body color)
+   =========================== */
 .o-section--header .c-brand__sub-title.t-sub-title {
-  color: inherit !important; /* same gray as body text */
-  font-weight: 400;          /* optional: keep it from looking like a big headline */
+  color: inherit !important; /* now resolves to black via global rule below */
+  font-weight: 400;          /* keep it from looking like a big headline */
 }
 
-/* Increase horizontal padding globally */
+/* ===========================
+   Layout: wider horizontal padding
+   =========================== */
 .o-container {
   padding-inline: clamp(16px, 6vw, 72px) !important; /* min 16px, scale by viewport, cap at 72px */
 }
 
-/* ===== Click-to-toggle abstracts ===== */
+/* ===========================
+   Toggle-able abstracts
+   =========================== */
 details.abstract { margin: 0.35rem 0 0.75rem; }
 details.abstract[open] { margin-bottom: 1.25rem; }
 
 summary.abstract-toggle {
   cursor: pointer;
   display: inline-block;
-  text-decoration: underline;   /* make it look like a link */
   user-select: none;
   outline: none;
+  text-decoration: underline;   /* look like a link */
 }
 
 /* Hide the default disclosure arrow so it looks like a text link */
@@ -34,33 +40,13 @@ details.abstract[open] summary.abstract-toggle::after {
   content: " ▾";
 }
 
-/* Optional: make the summary use your anchor color.
-   If your theme sets link color on <a>, copy that hex here. */
-summary.abstract-toggle { color: inherit; } /* change to e.g., #337ab7 if you want blue */
-
-
-/* Make the header avatar rectangular (no rounding or masks) */
+/* ===========================
+   Avatar: rounded rectangle + caption
+   =========================== */
 .o-section--header .c-avatar,
 .o-section--header .c-avatar__img {
-  border-radius: 0 !important;
-  clip-path: none !important;
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-  overflow: visible; /* in case the parent was clipping */
-}
-
-/* Prevent stretching: keep the image's aspect ratio */
-.o-section--header .c-avatar__img {
-  width: 100%;
-  height: auto !important;   /* don't force a fixed height */
-  object-fit: contain;       /* or 'cover' if you want it to fill the box and crop */
-}
-
-/* Rounded-rectangle avatar */
-.o-section--header .c-avatar,
-.o-section--header .c-avatar__img {
-  border-radius: 12px !important;   /* adjust to taste */
-  overflow: hidden;                  /* hide any overflow when rounded */
+  border-radius: 12px !important;   /* adjust to taste (8px–16px also nice) */
+  overflow: hidden;                  /* hide overflow on rounded corners */
 }
 
 /* Keep aspect ratio and avoid stretching */
@@ -70,14 +56,46 @@ summary.abstract-toggle { color: inherit; } /* change to e.g., #337ab7 if you wa
   object-fit: cover;
 }
 
-/* Center the caption and style it lightly */
+/* Caption centered under avatar */
 .o-section--header .c-header__avatar { text-align: center; }
-
 .o-section--header .c-avatar__caption {
   margin-top: 8px;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: #9aa0a6;                    /* light gray; tweak if needed */
+  color: #9aa0a6;                    /* light gray */
 }
 
+/* ===========================
+   Global text & link styling
+   =========================== */
 
+/* Make all body text black */
+.c-main-container {
+  color: #000 !important;
+}
+
+/* Make all links black and underlined (all states) */
+.c-main-container a,
+.c-main-container a:visited,
+.c-main-container a:hover,
+.c-main-container a:focus,
+.c-main-container a:active {
+  color: #000 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Ensure toggle “Abstract” links match, too */
+summary.abstract-toggle {
+  color: #000 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* (Optional) If you DON'T want the top nav items underlined, uncomment:
+.c-header__contact a h4 { text-decoration: none !important; }
+*/
