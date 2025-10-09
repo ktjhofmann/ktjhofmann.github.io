@@ -206,3 +206,31 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   line-height: 1.2;
   color: #9aa0a6;
 }
+
+/* ===== More top padding (header) ===== */
+.o-section--header .o-section__header {
+  padding-top: 32px !important;      /* was 16px */
+}
+.o-section--header .o-section__container {
+  padding-top: 20px !important;      /* was 12px */
+}
+.o-section--header .c-header__content {
+  padding-top: 16px !important;      /* was 8px */
+}
+
+/* ===== More space between: Publications / Working papers / Work in progress / CV ===== */
+.o-section--header .c-header__contact .o-grid {
+  gap: 26px !important;              /* try 22–32px to taste */
+}
+
+/* ===== Justify the intro paragraph block ===== */
+.o-section--header .c-brand__sub-title.t-sub-title {
+  text-align: justify !important;
+  text-justify: inter-word;
+  hyphens: auto;                     /* nicer breaks on narrow screens */
+}
+/* (optional) keep the last line not stretched */
+@supports (-ms-ime-align:auto) or (text-align-last: auto) {
+  .o-section--header .c-brand__sub-title.t-sub-title { text-align-last: left; }
+}
+
