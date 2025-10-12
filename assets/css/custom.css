@@ -234,42 +234,22 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 }
 
 /* =========================================================
-   HERO TOP SPACING + CLEAN BACKGROUND SPLIT
+   HERO TOP SPACING + **SOLID WHITE HEADER** (no seam)
    ========================================================= */
 
-/* Reliable top spacing applied to the section itself (no pseudo-element) */
+/* Keep the top spacing on the section itself */
 .o-section--header {
   padding-top: 56px !important;           /* adjust to taste: 40–80px */
   position: relative;
 }
 
-/* Remove the theme’s overlapping half backgrounds that cause a wobbly seam */
+/* Kill the theme’s half-background helper DIVs */
 .o-section--header .o-section__header-bg,
 .o-section--header .o-section__content-bg {
   display: none !important;
 }
 
-/* Desktop: single crisp split (matches themes.light.css) */
-@media (min-width: 1024px) {
-  .o-section--header {
-    background: linear-gradient(to right, #fbfbfb 0 50%, #ffffff 50% 100%) !important;
-  }
-}
-
-/* Mobile/tablet: uniform white */
-@media (max-width: 1023px) {
-  .o-section--header {
-    background: #ffffff !important;
-  }
-}
-
-/* Disable the half-bg helper DIVs */
-.o-section--header .o-section__header-bg,
-.o-section--header .o-section__content-bg {
-  display: none !important;
-}
-
-/* Make every inner header/container background transparent & remove borders */
+/* Strip *all* inner backgrounds & borders inside the header */
 .o-section--header .t-section__header,
 .o-section--header .t-section__content,
 .o-section--header .o-section__header,
@@ -280,14 +260,16 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   border: 0 !important;
 }
 
-/* Paint exactly one background on the section (desktop) */
-@media (min-width: 1024px) {
-  .o-section--header {
-    background: linear-gradient(to right, #fbfbfb 0 30%, #ffffff 30% 100%) !important;
-  }
+/* Hard override: ensure the section itself is the only painter */
+.o-section--header,
+.o-section--header.t-section {
+  background: #ffffff !important;         /* solid white header = no seam */
 }
 
-/* Mobile/tablet: keep uniform white */
-@media (max-width: 1023px) {
-  .o-section--header { background: #ffffff !important; }
+/* Also neutralize the theme’s desktop alternation just in case */
+@media (min-width: 1024px) {
+  .o-section--header .t-section__header,
+  .o-section--header .t-section__content {
+    background: transparent !important;
+  }
 }
