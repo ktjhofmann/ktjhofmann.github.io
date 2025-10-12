@@ -2,7 +2,7 @@
    GLOBAL TEXT & LINK STYLING
    ========================================================= */
 .c-main-container {
-  color: #222 !important;                 /* dark gray body text */
+  color: #222 !important;                 /* dark gray body text (later we force black sitewide) */
 }
 
 .c-main-container a,
@@ -120,9 +120,8 @@ summary.abstract-toggle {
 /* =========================================================
    INTRO PARAGRAPH (H2 SUB-TITLE): FULL JUSTIFY, NO HYPHENS
    ========================================================= */
-/* Important: keep words intact (no hyphenation), justify by widening spaces */
 .o-section--header .c-brand__sub-title.t-sub-title {
-  color: inherit !important;              /* same dark gray as body text */
+  color: inherit !important;              /* same as body text */
   font-weight: 400;
   font-size: clamp(14px, 1.6vw, 18px) !important;
   line-height: 1.55;
@@ -177,7 +176,7 @@ summary.abstract-toggle {
 
 .o-section--header .c-header__contact a,
 .o-section--header .c-header__contact a h4 {
-  color: inherit !important;              /* same dark gray as intro */
+  color: inherit !important;              /* same as intro */
 }
 
 .o-section--header .c-header__contact a h4 {
@@ -274,20 +273,20 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   }
 }
 
-/* ===== All text in black (except avatar caption) ===== */
-
-/* Make black the default text color everywhere */
+/* =========================================================
+   ALL TEXT IN BLACK (except avatar caption)
+   ========================================================= */
 body,
 .c-main-container {
   color: #000 !important;
 }
 
-/* Headings should inherit black (override theme’s gray) */
+/* Headings inherit black (override theme gray) */
 h1, h2, h3, h4, h5, h6 {
   color: inherit !important;
 }
 
-/* Links should be black in all states (you already underline in custom.css) */
+/* Links black in all states */
 a,
 a:visited,
 a:hover,
@@ -305,7 +304,7 @@ a:active,
   color: inherit !important;
 }
 
-/* Ensure the name is black too (already set, but reinforce) */
+/* Ensure the name is black too (reinforce) */
 .c-brand__title.t-title,
 .c-brand__title.t-title .c-brand__first-word,
 .c-brand__title.t-title .c-brand__second-word {
@@ -318,7 +317,9 @@ a:active,
   color: #9aa0a6 !important;
 }
 
-/* Preloader: two dark-gray segments (top/bottom) */
+/* =========================================================
+   PRELOADER COLOR (dark gray)
+   ========================================================= */
 .t-preloader__spinner:not(:required):before,
 .c-preloader__spinner:not(:required):before {
   border-top-color: #555 !important;
@@ -327,7 +328,9 @@ a:active,
   border-right-color: transparent !important;
 }
 
-/* ===== Remove ALL the forced uppercase on headings ===== */
+/* =========================================================
+   REMOVE FORCED UPPERCASE
+   ========================================================= */
 h1, h2, h3, h4, h5, h6 {
   text-transform: none !important;
   letter-spacing: normal !important;
@@ -339,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal !important;
 }
 
-/* Paper titles and metadata */
+/* Paper titles and metadata (just casing here) */
 .c-work__heading,
 .c-work__heading a,
 .c-work__title,
@@ -349,14 +352,19 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal !important;
 }
 
-/* The four header links (Publications / Working papers / Work in progress / CV) */
+/* Header quick links */
 .o-section--header .c-header__contact h4 {
   text-transform: none !important;
   letter-spacing: normal !important;
 }
 
-/* ===== Match paper/section headings to intro paragraph size & weight ===== */
-:root { --para-size: clamp(14px, 1.6vw, 18px); }
+/* =========================================================
+   TYPOGRAPHY SCALES
+   ========================================================= */
+:root {
+  --para-size: clamp(14px, 1.6vw, 18px);     /* base paragraph size */
+  --paper-h4-size: calc(0.8 * var(--para-size)); /* smaller than h3 */
+}
 
 /* Left-column section labels (“Publications”, etc.) */
 .o-section__heading {
@@ -366,42 +374,28 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal !important;
 }
 
-/* Paper titles and metadata under each section */
-.c-work__heading,
-.c-work__heading a,
-.c-work__title,
-.c-work__timeframe,
-.c-work__location {
-  font-size: var(--para-size) !important;
-  font-weight: 400 !important;
-  line-height: 1.55 !important;
-  letter-spacing: normal !important;
-}
-
-/* Any h2/h3/h4 inside the content sections (but NOT the name block in the hero) */
+/* Keep general content h2/h3 aligned to paragraph size.
+   NOTE: h4 is intentionally NOT included here so we can size it separately. */
 .o-section .o-content h2,
-.o-section .o-content h3,
-.o-section .o-content h4 {
+.o-section .o-content h3 {
   font-size: var(--para-size) !important;
   font-weight: 400 !important;
   line-height: 1.55 !important;
   letter-spacing: normal !important;
 }
 
-/* ===== Make h4 smaller than the current h3; abstract matches h4 ===== */
-:root {
-  /* fallback if --para-size isn't defined earlier */
-  --para-size: clamp(14px, 1.6vw, 18px);
-  --paper-h4-size: calc(0.8 * var(--para-size)); /* slightly smaller than h3 */
-}
-
-/* Coauthors / venue / notes (h4) */
-.c-work__title {
-  font-size: var(--paper-h4-size) !important;
+/* Coauthors / venue / notes (h4) — specific and strong to override any earlier rules */
+.o-section .o-content .c-work__title {
+  font-size: var(--paper-h4-size) !important;  /* smaller than current h3 */
   font-weight: 400 !important;
   line-height: 1.55 !important;
   text-transform: none !important;
   letter-spacing: normal !important;
+}
+
+/* Ensure links inside those h4s don’t bump size */
+.o-section .o-content .c-work__title a {
+  font-size: inherit !important;
 }
 
 /* Abstract body uses the same size as h4 */
@@ -433,5 +427,3 @@ details.abstract .c-work__title {
 @supports (-ms-ime-align:auto) or (text-align-last: auto) {
   details.abstract .c-work__title { text-align-last: left; }
 }
-
-
