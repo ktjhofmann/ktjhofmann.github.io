@@ -355,3 +355,35 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal !important;
 }
 
+/* ===== Match paper/section headings to intro paragraph size & weight ===== */
+:root { --para-size: clamp(14px, 1.6vw, 18px); }
+
+/* Left-column section labels (“Publications”, etc.) */
+.o-section__heading {
+  font-size: var(--para-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: normal !important;
+}
+
+/* Paper titles and metadata under each section */
+.c-work__heading,
+.c-work__heading a,
+.c-work__title,
+.c-work__timeframe,
+.c-work__location {
+  font-size: var(--para-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: normal !important;
+}
+
+/* Any h2/h3/h4 inside the content sections (but NOT the name block in the hero) */
+.o-section .o-content h2,
+.o-section .o-content h3,
+.o-section .o-content h4 {
+  font-size: var(--para-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: normal !important;
+}
