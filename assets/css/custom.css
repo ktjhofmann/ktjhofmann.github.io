@@ -283,7 +283,7 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
 /* Paint exactly one background on the section (desktop) */
 @media (min-width: 1024px) {
   .o-section--header {
-    background: linear-gradient(to right, #fbfbfb 0 50%, #ffffff 50% 100%) !important;
+    background: linear-gradient(to right, #fbfbfb 0 30%, #ffffff 30% 100%) !important;
   }
 }
 
