@@ -418,3 +418,20 @@ summary.abstract-toggle {
   line-height: 1.55 !important;
 }
 
+/* Abstract: block-justify without hyphenation */
+details.abstract .c-work__title {
+  text-align: justify !important;
+  text-justify: inter-word;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Keep the last line left-aligned for a natural finish */
+@supports (-ms-ime-align:auto) or (text-align-last: auto) {
+  details.abstract .c-work__title { text-align-last: left; }
+}
+
+
