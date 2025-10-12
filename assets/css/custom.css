@@ -327,3 +327,31 @@ a:active,
   border-right-color: transparent !important;
 }
 
+/* ===== Remove ALL the forced uppercase on headings ===== */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Section titles in the left column (e.g., “Publications”) */
+.o-section__heading {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Paper titles and metadata */
+.c-work__heading,
+.c-work__heading a,
+.c-work__title,
+.c-work__timeframe,
+.c-work__location {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* The four header links (Publications / Working papers / Work in progress / CV) */
+.o-section--header .c-header__contact h4 {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
