@@ -262,3 +262,32 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
     background: #ffffff !important;
   }
 }
+
+/* Disable the half-bg helper DIVs */
+.o-section--header .o-section__header-bg,
+.o-section--header .o-section__content-bg {
+  display: none !important;
+}
+
+/* Make every inner header/container background transparent & remove borders */
+.o-section--header .t-section__header,
+.o-section--header .t-section__content,
+.o-section--header .o-section__header,
+.o-section--header .o-section__content,
+.o-section--header .c-header,
+.o-section--header .o-section__container {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Paint exactly one background on the section (desktop) */
+@media (min-width: 1024px) {
+  .o-section--header {
+    background: linear-gradient(to right, #fbfbfb 0 50%, #ffffff 50% 100%) !important;
+  }
+}
+
+/* Mobile/tablet: keep uniform white */
+@media (max-width: 1023px) {
+  .o-section--header { background: #ffffff !important; }
+}
