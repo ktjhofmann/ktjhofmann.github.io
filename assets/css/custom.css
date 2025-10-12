@@ -233,42 +233,32 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   color: #9aa0a6;
 }
 
-/* ===== Bullet-proof top spacing for the hero =====
-   Puts space on the section itself (and a pseudo-element),
-   so inner layout tricks (100vh, negative offsets, etc.)
-   can't collapse it.
-*/
+/* =========================================================
+   HERO TOP SPACING + CLEAN BACKGROUND SPLIT
+   ========================================================= */
+
+/* Reliable top spacing applied to the section itself (no pseudo-element) */
 .o-section--header {
-  --hero-top: 56px;                     /* adjust to taste: 40–80px */
-  padding-top: var(--hero-top) !important;
+  padding-top: 56px !important;           /* adjust to taste: 40–80px */
   position: relative;
 }
 
-/* Extra guard if some browsers collapse padding due to backgrounds */
-.o-section--header::before {
-  content: "";
-  display: block;
-  height: var(--hero-top);
-  width: 100%;
-}
-
-/* Make the gray/white split a single, perfectly straight background */
+/* Remove the theme’s overlapping half backgrounds that cause a wobbly seam */
 .o-section--header .o-section__header-bg,
 .o-section--header .o-section__content-bg {
-  display: none !important; /* disable the absolute half backgrounds */
+  display: none !important;
 }
 
-/* Desktop split (matches themes.light.css: gray #fbfbfb, white #fff) */
+/* Desktop: single crisp split (matches themes.light.css) */
 @media (min-width: 1024px) {
   .o-section--header {
     background: linear-gradient(to right, #fbfbfb 0 50%, #ffffff 50% 100%) !important;
   }
 }
 
-/* Mobile/tablet: keep full white like your theme already does */
+/* Mobile/tablet: uniform white */
 @media (max-width: 1023px) {
   .o-section--header {
     background: #ffffff !important;
   }
 }
-
