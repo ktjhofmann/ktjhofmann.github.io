@@ -392,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   /* fallback if --para-size isn't defined earlier */
   --para-size: clamp(14px, 1.6vw, 18px);
-  --paper-h4-size: calc(0.92 * var(--para-size)); /* slightly smaller than h3 */
+  --paper-h4-size: calc(0.8 * var(--para-size)); /* slightly smaller than h3 */
 }
 
 /* Coauthors / venue / notes (h4) */
