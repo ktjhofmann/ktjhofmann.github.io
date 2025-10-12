@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================= */
 :root {
   --para-size: clamp(14px, 1.6vw, 18px);     /* base paragraph size */
-  --paper-h4-size: calc(0.8 * var(--para-size)); /* smaller than h3 */
+  --paper-h4-size: calc(0.9 * var(--para-size)); /* smaller than h3 */
 }
 
 /* Left-column section labels (“Publications”, etc.) */
