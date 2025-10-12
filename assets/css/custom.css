@@ -232,3 +232,22 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   line-height: 1.2;
   color: #9aa0a6;
 }
+
+/* ===== Bullet-proof top spacing for the hero =====
+   Puts space on the section itself (and a pseudo-element),
+   so inner layout tricks (100vh, negative offsets, etc.)
+   can't collapse it.
+*/
+.o-section--header {
+  --hero-top: 56px;                     /* adjust to taste: 40–80px */
+  padding-top: var(--hero-top) !important;
+  position: relative;
+}
+
+/* Extra guard if some browsers collapse padding due to backgrounds */
+.o-section--header::before {
+  content: "";
+  display: block;
+  height: var(--hero-top);
+  width: 100%;
+}
