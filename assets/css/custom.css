@@ -273,3 +273,57 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
     background: transparent !important;
   }
 }
+
+/* ===== All text in black (except avatar caption) ===== */
+
+/* Make black the default text color everywhere */
+body,
+.c-main-container {
+  color: #000 !important;
+}
+
+/* Headings should inherit black (override theme’s gray) */
+h1, h2, h3, h4, h5, h6 {
+  color: inherit !important;
+}
+
+/* Links should be black in all states (you already underline in custom.css) */
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active,
+.t-link-container .t-link-container__item,
+.t-link-container:hover .t-link-container__item--blended {
+  color: inherit !important;
+}
+
+/* Theme brand colors → inherit black */
+.t-title__first-word,
+.t-title__second-word,
+.t-sub-title {
+  color: inherit !important;
+}
+
+/* Ensure the name is black too (already set, but reinforce) */
+.c-brand__title.t-title,
+.c-brand__title.t-title .c-brand__first-word,
+.c-brand__title.t-title .c-brand__second-word {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+/* Keep ONLY the avatar caption gray */
+.o-section--header .c-avatar__caption {
+  color: #9aa0a6 !important;
+}
+
+/* Preloader: two dark-gray segments (top/bottom) */
+.t-preloader__spinner:not(:required):before,
+.c-preloader__spinner:not(:required):before {
+  border-top-color: #555 !important;
+  border-bottom-color: #555 !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
