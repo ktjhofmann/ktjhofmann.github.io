@@ -387,3 +387,34 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.55 !important;
   letter-spacing: normal !important;
 }
+
+/* ===== Make h4 smaller than the current h3; abstract matches h4 ===== */
+:root {
+  /* fallback if --para-size isn't defined earlier */
+  --para-size: clamp(14px, 1.6vw, 18px);
+  --paper-h4-size: calc(0.92 * var(--para-size)); /* slightly smaller than h3 */
+}
+
+/* Coauthors / venue / notes (h4) */
+.c-work__title {
+  font-size: var(--paper-h4-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Abstract body uses the same size as h4 */
+details.abstract .c-work__title {
+  font-size: var(--paper-h4-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
+/* Optional: make the "Abstract" toggle label match h4 as well */
+summary.abstract-toggle {
+  font-size: var(--paper-h4-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
