@@ -161,14 +161,22 @@ a .fa,
   transition: all .15s linear;
 }
 
-/* Sections */
+/* =========================================================
+   Sections (updated to avoid header seam)
+   ========================================================= */
 .t-section__header {
   background: #fafafa;
 }
 
-.t-section__content,
-.t-section--header .t-section__header {
+/* Default content background */
+.t-section__content {
   background: #fff;
+}
+
+/* Header’s inner parts: transparent so the section paints the bg */
+.t-section--header .t-section__header,
+.t-section--header .t-section__content {
+  background: transparent;
 }
 
 .t-section__content-border-color {
@@ -184,22 +192,27 @@ a .fa,
     border-top: 1px solid #ececec;
     border-bottom: 1px solid #ececec;
   }
+  /* Header: no borders or background on inner area */
   .t-section--header .t-section__header {
-    border-top: none;
-    border-bottom: none;
+    border-top: 0;
+    border-bottom: 0;
+    background: transparent;
+  }
+  .t-section--header .t-section__content {
+    background: transparent;
   }
 }
 
 @media (min-width: 1024px) {
-  /* Odd Sections */
+  /* Odd Sections (default) */
   .t-section,
-  .t-section__header,
-  .t-section--header .t-section__header {
+  .t-section__header {
     background: #fbfbfb;
   }
   .t-section__content {
     background: #fff;
   }
+
   /* Even Sections */
   .t-section:nth-child(even),
   .t-section:nth-child(even) .t-section__header {
@@ -210,6 +223,12 @@ a .fa,
   }
   .t-section:nth-child(even) .t-timeline__point {
     box-shadow: 0 0 0 6px #fcfcfc;
+  }
+
+  /* Header: ensure inner parts stay transparent on desktop */
+  .t-section--header .t-section__header,
+  .t-section--header .t-section__content {
+    background: transparent;
   }
 }
 
