@@ -251,3 +251,24 @@ details.abstract[open] summary.abstract-toggle::after { content: " ▾"; }
   height: var(--hero-top);
   width: 100%;
 }
+
+/* Make the gray/white split a single, perfectly straight background */
+.o-section--header .o-section__header-bg,
+.o-section--header .o-section__content-bg {
+  display: none !important; /* disable the absolute half backgrounds */
+}
+
+/* Desktop split (matches themes.light.css: gray #fbfbfb, white #fff) */
+@media (min-width: 1024px) {
+  .o-section--header {
+    background: linear-gradient(to right, #fbfbfb 0 50%, #ffffff 50% 100%) !important;
+  }
+}
+
+/* Mobile/tablet: keep full white like your theme already does */
+@media (max-width: 1023px) {
+  .o-section--header {
+    background: #ffffff !important;
+  }
+}
+
