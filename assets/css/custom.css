@@ -227,3 +227,10 @@ details.abstract .c-work__title{
 .c-work__heading a, .c-work__heading .badge{ white-space:nowrap; }
 /* Light edge for high-DPI without changing color */
 .c-work__heading .badge{ box-shadow:0 0 0 1px rgba(0,0,0,.06); }
+
+/* ===== FORCE CONSISTENT SECTION COLUMN WIDTHS (desktop) ===== */
+@media (min-width: 1024px){
+  .o-section__container{ display:flex; }               /* ensure flex on all sections */
+  .o-section__header{ width:30% !important; }          /* left label column */
+  .o-section__content{ width:70% !important; }         /* right content column */
+}
