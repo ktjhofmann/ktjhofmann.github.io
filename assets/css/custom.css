@@ -433,3 +433,19 @@ details.abstract .c-work__title {
   font-size:.65em; line-height:1.8; border-radius:9999px;
   background:#111; color:#fff; text-transform:uppercase; letter-spacing:.04em;
 }
+
+/* Envelope email link after each advisor name */
+.advisor-email {
+  text-decoration: none !important;      /* keep the icon un-underlined */
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35em;                   /* space after the name */
+}
+
+.advisor-email .fa {
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.advisor-email:hover .fa,
+.advisor-email:focus .fa { opacity: 0.8; }
