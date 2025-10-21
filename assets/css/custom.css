@@ -27,11 +27,17 @@ h1,h2,h3,h4,h5,h6 { color:inherit !important; text-transform:none !important; le
 
 /* Abstract toggles look like links */
 summary.abstract-toggle{
-  color:inherit !important;
-  text-decoration:underline !important;
-  text-underline-offset:2px;
-  text-decoration-thickness:1.5px;
+  color: inherit !important;
+  font-size: var(--paper-h4-size) !important; /* match abstract text */
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-transform: none !important;
+
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
 }
+
 
 /* Font Awesome: draw with current text color (helps envelope) */
 .fa{ color:currentColor !important; text-shadow:none; }
@@ -242,12 +248,4 @@ details.abstract .c-work__title{
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
-}
-
-/* Make the "Abstract" toggle label match the abstract text size */
-details.abstract > summary.abstract-toggle {
-  font-size: var(--paper-h4-size) !important;  /* same as abstract body */
-  font-weight: 400 !important;
-  line-height: 1.55 !important;
-  text-transform: none !important;
 }
