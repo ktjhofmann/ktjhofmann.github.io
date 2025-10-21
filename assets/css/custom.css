@@ -462,3 +462,18 @@ details.abstract .c-work__title {
   display: inline-flex;                /* keep the icon tidy */
   align-items: center;
 }
+
+/* Inline pill badge after paper title */
+.c-work__heading .badge {
+  display: inline-block;
+  margin-left: 0.5ch;
+  padding: 0.08em 0.6em;
+  font-size: 0.88em;
+  font-weight: 600;       /* bold-ish */
+  font-style: italic;     /* “cursive” look you wanted */
+  line-height: 1.2;
+  white-space: nowrap;
+  border: 1px solid #bdbdbd;
+  border-radius: 9999px;  /* pill */
+  background: #fff;       /* works with your white header */
+}
