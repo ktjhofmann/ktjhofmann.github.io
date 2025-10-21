@@ -449,3 +449,16 @@ details.abstract .c-work__title {
 
 .advisor-email:hover .fa,
 .advisor-email:focus .fa { opacity: 0.8; }
+
+/* Put this at the very end of custom.css */
+.c-main-container a.advisor-email,
+.c-main-container a.advisor-email:visited,
+.c-main-container a.advisor-email:hover,
+.c-main-container a.advisor-email:focus,
+.c-main-container a.advisor-email:active {
+  text-decoration: none !important;   /* kill underline */
+  border-bottom: 0 !important;        /* belt-and-suspenders */
+  line-height: 1;                      /* avoid stray descender space */
+  display: inline-flex;                /* keep the icon tidy */
+  align-items: center;
+}
