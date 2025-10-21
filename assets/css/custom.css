@@ -2,9 +2,9 @@
    VARIABLES
    ========================================================= */
 :root{
-  --para-size: clamp(14px, 1.6vw, 18px);     /* base paragraph size */
+  --para-size: clamp(14px, 1.6vw, 18px);
   --paper-h4-size: calc(0.9 * var(--para-size));
-  --brand-blue: #2D64F0;                     /* your previous theme blue */
+  --brand-blue: #2D64F0; /* previous theme blue */
 }
 
 /* =========================================================
@@ -13,7 +13,7 @@
 html, body, .c-main-container { color:#000 !important; }
 h1,h2,h3,h4,h5,h6 { color:inherit !important; text-transform:none !important; letter-spacing:normal !important; }
 
-/* Always-underlined links in content */
+/* Always-underlined links (sitewide content) */
 .c-main-container a,
 .c-main-container a:visited,
 .c-main-container a:hover,
@@ -33,10 +33,10 @@ summary.abstract-toggle{
   text-decoration-thickness:1.5px;
 }
 
-/* Font Awesome: ensure icons use text color and appear solid (no pale/outline look) */
-.fa{ color:currentColor !important; font-style:normal; font-weight:normal; text-shadow:none; }
+/* Font Awesome: draw with current text color (helps envelope) */
+.fa{ color:currentColor !important; text-shadow:none; }
 
-/* Utility: opt-out of underline on specific anchors (used below for envelope) */
+/* Utility to opt-out of underline (used for the envelope icons) */
 .c-main-container a.no-underline,
 .c-main-container a.no-underline:visited,
 .c-main-container a.no-underline:hover,
@@ -52,13 +52,13 @@ summary.abstract-toggle{
 .o-container{ padding-inline:clamp(16px,6vw,72px) !important; }
 
 /* =========================================================
-   HEADER / HERO FLOW (no overlap, solid white background)
+   HEADER / HERO (white, no seam, no overlap)
    ========================================================= */
 .o-section--header{ padding-top:56px !important; position:relative; background:#fff !important; }
+/* Kill the theme’s helper backgrounds inside the hero */
 .o-section--header .o-section__header-bg,
 .o-section--header .o-section__content-bg{ display:none !important; }
-
-/* strip any inner bg/borders the theme adds */
+/* Strip any inner backgrounds/borders the theme adds */
 .o-section--header .t-section__header,
 .o-section--header .t-section__content,
 .o-section--header .o-section__header,
@@ -68,7 +68,7 @@ summary.abstract-toggle{
   background:transparent !important; border:0 !important;
 }
 
-/* local spacing */
+/* Local spacing inside the hero */
 .o-section--header .o-section__header,
 .o-section--header .o-section__content{ padding-top:3.5rem !important; }
 .o-section--header .o-section__header{ padding-bottom:12px !important; }
@@ -76,7 +76,7 @@ summary.abstract-toggle{
 .o-section--header .o-section__container{ padding-top:20px !important; }
 .o-section--header .c-header__content{ padding-top:16px !important; padding-bottom:12px !important; }
 
-/* cancel theme's 100vh header */
+/* Cancel theme’s 100vh hero behavior on desktop only (keep normal flow) */
 @media (min-width:1024px){
   .c-header__header, .c-header__content{ height:auto !important; }
   .c-header__contact{ position:relative !important; bottom:auto !important; left:auto !important; width:100%; margin-top:16px !important; }
@@ -86,7 +86,7 @@ summary.abstract-toggle{
 }
 
 /* =========================================================
-   NAME LINE (keep on one line, consistent weight)
+   NAME LINE (uppercase, black, consistent weight)
    ========================================================= */
 .c-brand__title.t-title .c-brand__sizer{ white-space:nowrap !important; }
 .c-brand__title.t-title,
@@ -101,24 +101,129 @@ summary.abstract-toggle{
 .c-brand__first-word::first-letter, .c-brand__second-word::first-letter{ font-size:1.2em; line-height:1; }
 
 /* =========================================================
-   INTRO PARAGRAPH (full-justify without hyphens)
+   INTRO PARAGRAPH (full-justify, no hyphens)
    ========================================================= */
 .o-section--header .c-brand__sub-title.t-sub-title{
   color:inherit !important; font-weight:400;
   font-size:var(--para-size) !important; line-height:1.55;
-  max-width:900px;
-
-/* Normalize all sections to a true 30/70 split on desktop */
-@media (min-width: 1024px) {
-  .o-section__container { display: flex !important; } /* belt & suspenders */
-  .o-section__header  { flex: 0 0 30% !important; width: auto !important; }
-  .o-section__content { flex: 0 0 70% !important; width: auto !important; }
+  max-width:900px; margin-left:auto; margin-right:auto; margin-bottom:2rem;
+  text-align:justify !important; text-justify:inter-word;
+  hyphens:none !important; -webkit-hyphens:none !important; -ms-hyphens:none !important;
+  overflow-wrap:normal; word-break:normal;
+}
+@supports (-ms-ime-align:auto) or (text-align-last: auto){
+  .o-section--header .c-brand__sub-title.t-sub-title{ text-align-last:left; }
 }
 
-/* Keep left/right padding consistent; rely on .o-container padding-inline */
-.o-section .o-section__header,
-.o-section .o-section__content {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+/* Advisors sentence — keep on same width as intro */
+.o-section--header .advised-by{
+  max-width:900px; margin:-0.25rem auto 1.5rem; /* slightly tucked under intro */
+  font-size:var(--para-size); line-height:1.55;
 }
 
+/* Envelope email link after each advisor name */
+.advisor-email{
+  text-decoration:none !important; /* icon shouldn’t be underlined */
+  display:inline-flex; align-items:center;
+  margin-left:0.25em;              /* tight space after the name */
+}
+/* Make the envelope a bit darker/stronger */
+.advisor-email .fa{ color:#222 !important; font-size:0.95em; line-height:1; }
+.advisor-email:hover .fa, .advisor-email:focus .fa{ opacity:0.85; }
+
+/* Also ensure these anchors never pick up underline */
+.c-main-container a.advisor-email,
+.c-main-container a.advisor-email:visited,
+.c-main-container a.advisor-email:hover,
+.c-main-container a.advisor-email:focus,
+.c-main-container a.advisor-email:active{ text-decoration:none !important; border:0 !important; }
+
+/* =========================================================
+   HEADER QUICK-LINKS ROW (Publications / WP / WIP / CV)
+   ========================================================= */
+.o-section--header .c-header__contact .o-grid{
+  display:flex !important; align-items:center;
+  gap:20px 28px !important; max-width:900px; margin-left:auto; margin-right:auto;
+}
+@media (min-width:521px){ .o-section--header .c-header__contact .o-grid{ flex-wrap:nowrap !important; } }
+@media (max-width:520px){ .o-section--header .c-header__contact .o-grid{ flex-wrap:wrap !important; } }
+.o-section--header .c-header__contact [class*="o-grid__col"]{
+  flex:0 0 auto !important; width:auto !important; margin-bottom:1.25rem !important;
+}
+.o-section--header .c-header__contact a,
+.o-section--header .c-header__contact a h4{ color:inherit !important; }
+.o-section--header .c-header__contact a h4{
+  font-size:var(--para-size) !important; font-weight:400 !important; margin:0 !important;
+  white-space:nowrap !important; text-decoration:underline !important; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+
+/* =========================================================
+   AVATAR: rounded rectangle + caption (caption stays gray)
+   ========================================================= */
+.o-section--header .c-header__avatar{ text-align:center; }
+.o-section--header .c-avatar, .o-section--header .c-avatar__img{
+  border-radius:12px !important; overflow:hidden;
+}
+.o-section--header .c-avatar__img{ width:100%; height:auto; object-fit:cover; }
+.o-section--header .c-avatar__caption{ margin-top:8px; font-size:0.85rem; line-height:1.2; color:#9aa0a6 !important; }
+
+/* =========================================================
+   PRELOADER (spinner dark gray)
+   ========================================================= */
+.t-preloader__spinner:not(:required):before,
+.c-preloader__spinner:not(:required):before{
+  border-top-color:#555 !important;
+  border-bottom-color:#555 !important;
+  border-left-color:transparent !important;
+  border-right-color:transparent !important;
+}
+
+/* =========================================================
+   REMOVE THEME FORCED UPPERCASE (except the name we set above)
+   ========================================================= */
+.o-section__heading,
+.c-work__heading, .c-work__heading a,
+.c-work__title, .c-work__timeframe, .c-work__location,
+.o-section--header .c-header__contact h4{
+  text-transform:none !important; letter-spacing:normal !important;
+}
+
+/* =========================================================
+   TYPOGRAPHY: keep h3 as-is; h4 smaller; abstracts like h4
+   ========================================================= */
+/* Keep general content h2/h3 aligned with paragraph size (leaves your h3 look) */
+.o-section .o-content h2,
+.o-section .o-content h3{
+  font-size:var(--para-size) !important; font-weight:400 !important; line-height:1.55 !important; letter-spacing:normal !important;
+}
+/* Coauthors / notes (h4) */
+.o-section .o-content .c-work__title{
+  font-size:var(--paper-h4-size) !important; font-weight:400 !important; line-height:1.55 !important;
+}
+/* Ensure links inside those h4s don’t change size */
+.o-section .o-content .c-work__title a{ font-size:inherit !important; }
+
+/* Abstract body uses the same size as h4 and is block-justified without hyphens */
+details.abstract .c-work__title{
+  font-size:var(--paper-h4-size) !important; font-weight:400 !important; line-height:1.55 !important;
+  text-align:justify !important; text-justify:inter-word;
+  hyphens:none !important; -webkit-hyphens:none !important; -ms-hyphens:none !important;
+  overflow-wrap:normal; word-break:normal;
+}
+@supports (-ms-ime-align:auto) or (text-align-last: auto){
+  details.abstract .c-work__title{ text-align-last:left; }
+}
+
+/* =========================================================
+   JOB MARKET PAPER BADGE (blue pill)
+   ========================================================= */
+.c-work__heading .badge{
+  display:inline-block; margin-left:0.5ch; padding:0.1em 0.65em;
+  font-size:0.88em; font-weight:600; font-style:italic; line-height:1.2;
+  white-space:nowrap; color:#fff; background:var(--brand-blue);
+  border:1px solid #1e4fca; border-radius:9999px;
+}
+/* Keep title and pill together if they approach a wrap */
+.c-work__heading a, .c-work__heading .badge{ white-space:nowrap; }
+/* Light edge for high-DPI without changing color */
+.c-work__heading .badge{ box-shadow:0 0 0 1px rgba(0,0,0,.06); }
