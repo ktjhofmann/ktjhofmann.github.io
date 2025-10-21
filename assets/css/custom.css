@@ -107,3 +107,18 @@ summary.abstract-toggle{
   color:inherit !important; font-weight:400;
   font-size:var(--para-size) !important; line-height:1.55;
   max-width:900px;
+
+/* Normalize all sections to a true 30/70 split on desktop */
+@media (min-width: 1024px) {
+  .o-section__container { display: flex !important; } /* belt & suspenders */
+  .o-section__header  { flex: 0 0 30% !important; width: auto !important; }
+  .o-section__content { flex: 0 0 70% !important; width: auto !important; }
+}
+
+/* Keep left/right padding consistent; rely on .o-container padding-inline */
+.o-section .o-section__header,
+.o-section .o-section__content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
