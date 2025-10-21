@@ -463,17 +463,25 @@ details.abstract .c-work__title {
   align-items: center;
 }
 
-/* Inline pill badge after paper title */
+:root { --brand-blue: #2D64F0; } /* from your old theme */
+
 .c-work__heading .badge {
   display: inline-block;
   margin-left: 0.5ch;
-  padding: 0.08em 0.6em;
+  padding: 0.1em 0.65em;
   font-size: 0.88em;
-  font-weight: 600;       /* bold-ish */
-  font-style: italic;     /* “cursive” look you wanted */
+  font-weight: 600;         /* bold-ish */
+  font-style: italic;       /* “cursive” */
   line-height: 1.2;
   white-space: nowrap;
-  border: 1px solid #bdbdbd;
-  border-radius: 9999px;  /* pill */
-  background: #fff;       /* works with your white header */
+  color: #fff;              /* readable on blue */
+  background: var(--brand-blue);
+  border: 1px solid #1e4fca;/* slightly darker blue edge */
+  border-radius: 9999px;    /* pill */
 }
+
+/* If the badge ever wraps, keep it with the title/link */
+.c-work__heading a, .c-work__heading .badge { white-space: nowrap; }
+/* optional */
+.c-work__heading .badge { border: 0; box-shadow: 0 0 0 1px rgba(0,0,0,.06); }
+
