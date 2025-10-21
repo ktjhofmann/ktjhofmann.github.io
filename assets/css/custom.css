@@ -244,3 +244,10 @@ details.abstract .c-work__title{
   hyphens: none;
 }
 
+/* Make the "Abstract" toggle label match the abstract text size */
+details.abstract > summary.abstract-toggle {
+  font-size: var(--paper-h4-size) !important;  /* same as abstract body */
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-transform: none !important;
+}
