@@ -234,3 +234,20 @@ details.abstract .c-work__title{
   .o-section__header{ width:30% !important; }          /* left label column */
   .o-section__content{ width:70% !important; }         /* right content column */
 }
+
+/* Allow long paper titles to wrap; keep the pill tight */
+.c-work__heading a { 
+  white-space: normal !important; 
+}
+
+/* Keep the “Job Market Paper” pill on one line */
+.c-work__heading .badge { 
+  white-space: nowrap !important; 
+}
+
+.c-work__heading {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
