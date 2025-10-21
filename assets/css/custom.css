@@ -427,3 +427,9 @@ details.abstract .c-work__title {
 @supports (-ms-ime-align:auto) or (text-align-last: auto) {
   details.abstract .c-work__title { text-align-last: left; }
 }
+
+.badge{
+  display:inline-block; margin-left:.5rem; padding:0 .5rem;
+  font-size:.65em; line-height:1.8; border-radius:9999px;
+  background:#111; color:#fff; text-transform:uppercase; letter-spacing:.04em;
+}
