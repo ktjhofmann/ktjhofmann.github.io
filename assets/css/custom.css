@@ -249,3 +249,12 @@ details.abstract .c-work__title{
   word-break: normal;
   hyphens: none;
 }
+
+.pdf-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.pdf-link:hover {
+  text-decoration: underline;
+}
