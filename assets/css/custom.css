@@ -250,11 +250,15 @@ details.abstract .c-work__title{
   hyphens: none;
 }
 
-.pdf-link {
-  color: blue;
-  text-decoration: none;
+.c-main-container a.pdf-link,
+.c-main-container a.pdf-link:visited,
+.c-main-container a.pdf-link:hover,
+.c-main-container a.pdf-link:focus,
+.c-main-container a.pdf-link:active{
+  color: var(--brand-blue) !important;
+  text-decoration: none !important;
 }
 
-.pdf-link:hover {
-  text-decoration: underline;
+.c-main-container a.pdf-link:hover{
+  text-decoration: underline !important;
 }
