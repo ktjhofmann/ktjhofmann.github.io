@@ -250,8 +250,7 @@ details.abstract .c-work__title{
 }
 
 /* =========================================================
-   PDF LINK OVERRIDE (blue, no underline by default)
-   IMPORTANT: must beat the global `.c-main-container a { ... !important }`
+   PDF LINK 
    ========================================================= */
 .c-main-container a.pdf-link,
 .c-main-container a.pdf-link:visited,
