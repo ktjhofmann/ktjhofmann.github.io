@@ -38,7 +38,6 @@ summary.abstract-toggle{
   text-decoration-thickness: 1.5px;
 }
 
-
 /* Font Awesome: draw with current text color (helps envelope) */
 .fa{ color:currentColor !important; text-shadow:none; }
 
@@ -235,13 +234,13 @@ details.abstract .c-work__title{
 .c-work__heading .badge{ box-shadow:0 0 0 1px rgba(0,0,0,.06); }
 
 /* Allow long paper titles to wrap; keep the pill tight */
-.c-work__heading a { 
-  white-space: normal !important; 
+.c-work__heading a {
+  white-space: normal !important;
 }
 
 /* Keep the “Job Market Paper” pill on one line */
-.c-work__heading .badge { 
-  white-space: nowrap !important; 
+.c-work__heading .badge {
+  white-space: nowrap !important;
 }
 
 .c-work__heading {
@@ -250,9 +249,12 @@ details.abstract .c-work__title{
   hyphens: none;
 }
 
+/* =========================================================
+   PDF LINK OVERRIDE (blue, no underline by default)
+   IMPORTANT: must beat the global `.c-main-container a { ... !important }`
+   ========================================================= */
 .c-main-container a.pdf-link,
 .c-main-container a.pdf-link:visited,
-.c-main-container a.pdf-link:hover,
 .c-main-container a.pdf-link:focus,
 .c-main-container a.pdf-link:active{
   color: var(--brand-blue) !important;
@@ -260,5 +262,8 @@ details.abstract .c-work__title{
 }
 
 .c-main-container a.pdf-link:hover{
+  color: var(--brand-blue) !important;
   text-decoration: underline !important;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
 }
