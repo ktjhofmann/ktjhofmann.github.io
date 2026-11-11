@@ -95,7 +95,14 @@
                               <br><br>
                               I received a PhD in economics from Stanford University in 2026.
                               <br><br>
-                              You can reach me at <a href="mailto:khofmann@nber.org">khofmann@nber.org</a>.
+                              You can reach me at <a id="email-link" href="#">khofmann [at] nber [dot] org</a>.
+                              <script>
+                                (function () {
+                                  var u = "khofmann", d = "nber.org", a = document.getElementById("email-link");
+                                  a.href = "mailto:" + u + "@" + d;
+                                  a.textContent = u + "@" + d;
+                                })();
+                              </script>
                             </span>
                           </span>
                           </span>
